@@ -5,14 +5,22 @@
 
 
 ## Contents at a Glance.
-* [About](#about)
+* [About.](#about)
 * [Documentation.](#documentation)
 * [Kubernetes Main Concepts.](#kubernetes-main-concepts)
 * [Kubernetes Features.](#kubernetes-features)
+* [What Problems Does Kubernetes Aim to Solve?](#what-problems-does-kubernetes-aim-to-solve)
+* [What problems can Kubernetes not solve?](#what-problems-can-kubernetes-not-solve)
 * [Docker Image Registry.](#docker-image-registry)
 * [Kubernetes Cloud Service.](#kubernetes-cloud-services)
 * [Info.](#info)
-* [Help](#help)
+* [Commands.](#commands)
+* [Pros.](#pros)
+* [Managers Kubernetes Configuration.](#managers-kubernetes-configuration)
+* [Metrics and Alerting.](#metrics-and-alerting)
+* [Handling Logging.](#handling-logging)
+* [Cloud Native Computing Foundation (CNCF).](#cloud-native-computing-foundation-cncf)
+* [Help.](#help)
 
 
 
@@ -58,6 +66,51 @@
 
 
 
+## What Problems Does Kubernetes Aim to Solve?
+* Service discovery and load balancing. You have an application comprising of hundreds of Microservices, and they need to 
+  efficiently and reliably communicate with each other. Kubernetes can take care of that.
+  
+* Horizontal scaling. The workload on your application is known to surge abruptly. Scaling up the replicas of a service 
+  will balance your workload. Scaling it down after the surge keeps your costs low. Kubernetes can do that for you (auto scale).
+  
+* Self healing. Whenever one of the hundreds of services goes down due to fatal error, you’ll want to automatically 
+  instantiate a new, healthy replica of this service. Kubernetes can do this for you (self healing).
+
+* Automated rollouts and rollbacks. Kubernetes can take care of deployment operations like the rollout of a new version 
+  of the application, and the rollback to a previous version. All of these operations can be performed reliably just by 
+  executing a couple of commands from a command line.
+
+* Secret and configuration management. Kubernetes provides built-in mechanisms to effectively store and manage configuration 
+  (like environmental variables, database connections) across different environments (eg : production, test, development). 
+  It also allows for storing sensitive configuration data, meant to be kept secret in a special manner, so that accidental 
+  exposure of such data is minimized.
+
+* Storage orchestration. Kubernetes allows for effective management of storage required by an application. In Kubernetes, 
+  storage management is separated into multiple steps. The allocated storage is first configured, then a claim is made 
+  whenever an application in the cluster requires this storage. Kubernetes provides excellent integration with various 
+  storage solutions supported by cloud providers.
+
+
+
+
+
+## What problems can Kubernetes not solve?
+* Kubernetes doesn’t deploy source code or build the application. Continuous integration, delivery, and deployment (CI/CD) 
+  workflows are not a core feature of Kubernetes. Automation tools like Jenkins, which has excellent integration 
+  with Kubernetes, could be used for such tasks.
+  
+* Kubernetes does not provide application-level services, such as message buses, data processing frameworks, databases, 
+  caches and storage systems as built-in services. These components can run on Kubernetes, and/or can be accessed by 
+  applications running on Kubernetes through portable mechanisms, such as the Open Service Broker.
+  
+* Kubernetes does not dictate logging, monitoring, or alerting solutions. Although Kubernetes comes with some integrations 
+  as proof of concept, and mechanisms to collect and export metrics, using external tools that are best suited for your 
+  particular use is recommended.
+
+
+
+
+
 ## Docker Image Registry.
 * [DockerHub.]()
 * [AWS Container Registry (ECR).]()
@@ -81,6 +134,58 @@
 
 ## Info.
 * Local Caching. Caches of different nodes are not synchronized with each other.
+
+
+
+
+
+## Commands.
+* `minikube start`
+* `kubectl get componentstatuses`
+* `kubectl cluster-info`
+* ``
+* ``
+
+
+
+
+
+## Pros.
+* Kubernetes can run containerized applications of any scale without any downtime.
+* Kubernetes can self-heal containerized applications, making them resilient to unexpected failures.
+* Kubernetes can auto-scale containerized applications as per the workload, and ensure optimal utilization of cloud resources.
+* Kubernetes greatly simplifies the process of deployment operations. With Kubernetes, however complex an operation is, 
+  it could be performed reliably by executing a couple of commands, at most.
+
+
+
+
+
+## Managers Kubernetes Configuration.
+* [Helm.](https://helm.sh/)
+* [Envoy.](https://www.envoyproxy.io/)
+
+
+
+
+
+## Metrics and Alerting.
+* [Prometheus.](https://prometheus.io/)
+
+
+
+
+
+## Handling Logging.
+* [Fluentd.](https://www.fluentd.org/)
+
+
+
+
+
+# Cloud Native Computing Foundation (CNCF).
+* [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/)
+* [Project Services and Maturity Levels.](https://www.cncf.io/projects/)
 
 
 
