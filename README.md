@@ -9,6 +9,7 @@
 * [Documentation.](#documentation)
 * [Kubernetes Main Concepts.](#kubernetes-main-concepts)
 * [Kubernetes Features.](#kubernetes-features)
+* [Kubernetes Commands.](kubernetes-commands.md)
 * [What Problems Does Kubernetes Aim to Solve?](#what-problems-does-kubernetes-aim-to-solve)
 * [What problems can Kubernetes not solve?](#what-problems-can-kubernetes-not-solve)
 * [Docker Image Registry.](#docker-image-registry)
