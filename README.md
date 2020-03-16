@@ -23,6 +23,7 @@
 * [Articles.](#articles)
 * [Conferences.](#conferences)
 * [Conference Speakers.](#conference-speakers)
+* [Jenkins Plugin for Kubernetes.](#jenkins-plugin-for-kubernetes)
 * [Help.](#help)
 
 
@@ -36,7 +37,8 @@
 
 
 ## Documentation.
-* [Kubernetes.](https://kubernetes.io/)<br/><br/>
+* [Kubernetes.](https://kubernetes.io/)
+* [Kubernetes native configuration management.](https://kustomize.io/)
 
 
 
@@ -194,6 +196,15 @@
 
 
 
+##  Alternatives Kubernetes.
+* Netflix OSS and Spring Cloud.
+* Docker Swarm.
+* Marathon on Apache Mesos.
+
+
+
+
+
 ## Articles.
 * [Kubernetes — What Is It, What Problems Does It Solve and How Does It Compare With Alternatives?](https://medium.com/@srikanth.k/kubernetes-what-is-it-what-problems-does-it-solve-how-does-it-compare-with-its-alternatives-937fe80b754f)
 
@@ -207,6 +218,13 @@
 
 
 ## Conference Speakers.
+
+
+
+
+
+## Jenkins Plugin for Kubernetes.
+* [1.](https://plugins.jenkins.io/kubernetes/)
 
 
 
