@@ -1,25 +1,77 @@
 # Kubernetes Commands.
 
+
+
+
+
+## Contents at a Glance.
+* [About.](#about)
+* [Documentation.](#documentation)
+* [General.](#general)
+* [kubectl apply](#kubectl-apply)
+* [kubectl config](#kubectl-config)
+* [kubectl cp](#kubectl-cp)
+* [kubectl delete](#kubectl-delete)
+* [kubectl describe](#kubectl-describe)
+* [kubectl edit](#kubectl-edit)
+* [kubectl exec](#kubectl-exec)
+* [kubectl get](#kubectl-get)
+* [kubectl logs](#kubectl-logs)
+* [kubectl port-forward](#kubectl-port-forward)
+* [kubectl rollout](#kubectl-rollout)
+* [kubectl scale](#kubectl-scale)
+* [Help.](#help)
+
+
+
+
+
+## About.
+
+
+
+
+
+## Documentation.
+
+
+
+
+
+## General.
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl                                    |                                                                         |
+| minikube start                             |                                                                         |
+
+
+
+
+
+## kubectl apply
+| Key/Command                                | Description                                                             |
+| ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl apply -f'                          |                                                                         |
 
 
 
 
 
+## kubectl config
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl config current-context             |
 | kubectl config delete-context              |
 | kubectl config get-contexts                |
 | kubectl config set-context                 |
+| kubectl config set-context                 |                                                                         |
+| kubectl config use-context                 |                                                                         |
 
 
 
 
 
+## kubectl cp
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl cp                                 |                                                                         |
@@ -28,24 +80,7 @@
 
 
 
-| Key/Command                                | Description                                                             |
-| ------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl config set-context                 |                                                                         |
-| kubectl config use-context                 |                                                                         |
-
-
-
-
-
-| Key/Command                                | Description                                                             |
-| ------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl describe configmap                 |                                                                         |
-| kubectl describe deployment                |                                                                         |
-
-
-
-
-
+## kubectl delete
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl delete                             |                                                                         |
@@ -65,6 +100,7 @@
 
 
 
+## kubectl describe
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl describe ingress                   |                                                                         |
@@ -75,11 +111,14 @@
 | kubectl describe svc                       |                                                                         |
 | kubectl describe secret                    |                                                                         |
 | kubectl describe statefulset               |                                                                         |
+| kubectl describe configmap                 |                                                                         |
+| kubectl describe deployment                |                                                                         |
 
 
 
 
 
+## kubectl edit
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl edit configmap                     |                                                                         |
@@ -96,6 +135,7 @@
 
 
 
+## kubectl exec
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl exec -ti                           |                                                                         |
@@ -104,6 +144,7 @@
 
 
 
+## kubectl get
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl get all                            |                                                                         |
@@ -132,6 +173,7 @@
 
 
 
+## kubectl logs
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl logs                               |                                                                         |
@@ -144,6 +186,10 @@
 | kubectl logs --since 1s -f                 |                                                                         |
 
 
+
+
+
+## kubectl port-forward
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl port-forward                       |                                                                         | 
@@ -152,6 +198,7 @@
 
 
 
+## kubectl rollout
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl rollout history                    |                                                                         |
@@ -163,7 +210,14 @@
 
 
 
+## kubectl scale
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl scale deployment                   |                                                                         |
 | kubectl scale statefulset                  |                                                                         |
+
+
+
+
+
+## Help.
