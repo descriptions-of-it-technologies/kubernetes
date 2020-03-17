@@ -145,17 +145,6 @@
 
 
 
-## Commands.
-* `minikube start`
-* `kubectl get componentstatuses`
-* `kubectl cluster-info`
-* ``
-* ``
-
-
-
-
-
 ## Pros.
 * Kubernetes can run containerized applications of any scale without any downtime.
 * Kubernetes can self-heal containerized applications, making them resilient to unexpected failures.

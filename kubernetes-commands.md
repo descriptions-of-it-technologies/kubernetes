@@ -7,10 +7,13 @@
 ## Contents at a Glance.
 * [About.](#about)
 * [Documentation.](#documentation)
+* [Minikube Main Information.](minikube-main-information.md)
+* [Minikube Commands.](minikube-commands.md)
 * [General.](#general)
 * [kubectl apply](#kubectl-apply)
 * [kubectl config](#kubectl-config)
 * [kubectl cp](#kubectl-cp)
+* [kubectl cluster-info](#kubectl-cluster-info)
 * [kubectl delete](#kubectl-delete)
 * [kubectl describe](#kubectl-describe)
 * [kubectl edit](#kubectl-edit)
@@ -20,6 +23,7 @@
 * [kubectl port-forward](#kubectl-port-forward)
 * [kubectl rollout](#kubectl-rollout)
 * [kubectl scale](#kubectl-scale)
+* [kubectl version](#kubectl-version)
 * [Help.](#help)
 
 
@@ -38,17 +42,18 @@
 
 
 
-## General.
+## General. 
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl                                    |                                                                         |
-| minikube start                             |                                                                         |
 
 
 
 
 
 ## kubectl apply
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl apply -f'                          |                                                                         |
@@ -58,6 +63,7 @@
 
 
 ## kubectl config
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl config current-context             |
@@ -72,6 +78,7 @@
 
 
 ## kubectl cp
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl cp                                 |                                                                         |
@@ -80,7 +87,29 @@
 
 
 
+## kubectl cluster-info
+
+| Key/Command                                | Description                                                             |
+| ------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl cluster-info                       | Show information about K8s Cluster.                                     |
+
+
+
+
+
+## kubectl version
+
+| Key/Command                                | Description                                                             |
+| ------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl version                            | Show version of kubectl client and version of server (cluster).         |
+| kubectl version --client                   | Show version of kubectl client.                                         |
+
+
+
+
+
 ## kubectl delete
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl delete                             |                                                                         |
@@ -101,6 +130,7 @@
 
 
 ## kubectl describe
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl describe ingress                   |                                                                         |
@@ -119,6 +149,7 @@
 
 
 ## kubectl edit
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl edit configmap                     |                                                                         |
@@ -136,6 +167,7 @@
 
 
 ## kubectl exec
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl exec -ti                           |                                                                         |
@@ -145,6 +177,7 @@
 
 
 ## kubectl get
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl get all                            |                                                                         |
@@ -155,7 +188,7 @@
 | kubectl get deployment --all-namespaces    |                                                                         |
 | kubectl get ingress                        |                                                                         |
 | kubectl get ingress --all-namespaces       |                                                                         |
-| kubectl get nodes                          |                                                                         |
+| kubectl get nodes                          | Show all servers (nods) K8s Cluster.                                    |
 | kubectl get namespaces                     |                                                                         |
 | kubectl get pods                           |                                                                         |
 | kubectl get pods --all-namespaces          |                                                                         |
@@ -168,12 +201,13 @@
 | kubectl get secret --all-namespaces        |                                                                         |
 | kubectl get statefulset                    |                                                                         |
 | kubectl get statefulset --all-namespaces   |                                                                         |
-
+| kubectl get componentstatuses              | Show status of K8s Cluster.                                             |
 
 
 
 
 ## kubectl logs
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl logs                               |                                                                         |
@@ -190,6 +224,7 @@
 
 
 ## kubectl port-forward
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl port-forward                       |                                                                         | 
@@ -199,6 +234,7 @@
 
 
 ## kubectl rollout
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl rollout history                    |                                                                         |
@@ -211,6 +247,7 @@
 
 
 ## kubectl scale
+
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl scale deployment                   |                                                                         |
