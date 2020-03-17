@@ -21,6 +21,8 @@
 * [Metrics and Alerting.](#metrics-and-alerting)
 * [Handling Logging.](#handling-logging)
 * [Cloud Native Computing Foundation (CNCF).](#cloud-native-computing-foundation-cncf)
+* [Minikube Main Information.](minikube-main-information.md)
+* [Minikube Commands.](minikube-commands.md)
 * [Articles.](#articles)
 * [Conferences.](#conferences)
 * [Conference Speakers.](#conference-speakers)
