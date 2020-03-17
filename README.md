@@ -23,10 +23,12 @@
 * [Cloud Native Computing Foundation (CNCF).](#cloud-native-computing-foundation-cncf)
 * [Minikube Main Information.](minikube-main-information.md)
 * [Minikube Commands.](minikube-commands.md)
+* [Kubernetes on Amazon Web Services](kubernetes-on-aws.md)
+* [Jenkins Plugin for Kubernetes.](#jenkins-plugin-for-kubernetes)
 * [Articles.](#articles)
 * [Conferences.](#conferences)
 * [Conference Speakers.](#conference-speakers)
-* [Jenkins Plugin for Kubernetes.](#jenkins-plugin-for-kubernetes)
+* [Courses.](#courses)
 * [Help.](#help)
 
 
@@ -196,6 +198,12 @@
 
 
 
+## Jenkins Plugin for Kubernetes.
+* [1.](https://plugins.jenkins.io/kubernetes/)
+
+
+
+
 
 ## Articles.
 * [Kubernetes — What Is It, What Problems Does It Solve and How Does It Compare With Alternatives?](https://medium.com/@srikanth.k/kubernetes-what-is-it-what-problems-does-it-solve-how-does-it-compare-with-its-alternatives-937fe80b754f)
@@ -215,9 +223,8 @@
 
 
 
-## Jenkins Plugin for Kubernetes.
-* [1.](https://plugins.jenkins.io/kubernetes/)
-
+## Courses.
+* [Kubernetes на Русском Языке.](https://www.youtube.com/playlist?list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi)
 
 
 
