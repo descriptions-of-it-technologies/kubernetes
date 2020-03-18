@@ -15,7 +15,6 @@
 * [Docker Image Registry.](#docker-image-registry)
 * [Kubernetes Cloud Service.](#kubernetes-cloud-services)
 * [Info.](#info)
-* [Commands.](#commands)
 * [Pros.](#pros)
 * [Managers Kubernetes Configuration.](#managers-kubernetes-configuration)
 * [Metrics and Alerting.](#metrics-and-alerting)
@@ -29,6 +28,8 @@
 * [Conferences.](#conferences)
 * [Conference Speakers.](#conference-speakers)
 * [Courses.](#courses)
+* [Books.](#books)
+* [Sites for practices.](#sites-for-practices)
 * [Help.](#help)
 
 
@@ -43,8 +44,11 @@
 
 ## Documentation.
 * [Kubernetes.](https://kubernetes.io/)
+* [Kubernetes Documentation.](https://kubernetes.io/docs/home/)
+* [Reference.](https://kubernetes.io/docs/reference/)
 * [Kubernetes native configuration management.](https://kustomize.io/)
-
+* [kubectl Cheat Sheet.](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+* [Community Forums.](https://discuss.kubernetes.io/)
 
 
 
@@ -207,7 +211,7 @@
 
 ## Articles.
 * [Kubernetes — What Is It, What Problems Does It Solve and How Does It Compare With Alternatives?](https://medium.com/@srikanth.k/kubernetes-what-is-it-what-problems-does-it-solve-how-does-it-compare-with-its-alternatives-937fe80b754f)
-
+* [How I passed the CKA (Certified Kubernetes Administrator) Exam](https://medium.com/platformer-blog/how-i-passed-the-cka-certified-kubernetes-administrator-exam-8943aa24d71d)
 
 
 
@@ -225,6 +229,22 @@
 
 ## Courses.
 * [Kubernetes на Русском Языке.](https://www.youtube.com/playlist?list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi)
+* [Certified Kubernetes Administrator (CKA) with Practice Tests](https://kodekloud.com/p/certified-kubernetes-administrator-with-practice-tests)
+
+
+
+
+
+## Books.
+* [Kubernetes in Action.](https://www.google.com/search?q=kubernetes+in+action&oq=Kubernetes+in+Action&aqs=chrome.0.0l7j69i60.339j0j4&sourceid=chrome&ie=UTF-8)
+
+
+
+
+
+## Sites for Practices.
+* [Katacoda](https://www.katacoda.com/)
+
 
 
 

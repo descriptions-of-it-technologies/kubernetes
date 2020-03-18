@@ -18,6 +18,7 @@
 * [kubectl describe](#kubectl-describe)
 * [kubectl edit](#kubectl-edit)
 * [kubectl exec](#kubectl-exec)
+* [kubectl explain](#kubectl-explain)
 * [kubectl get](#kubectl-get)
 * [kubectl logs](#kubectl-logs)
 * [kubectl port-forward](#kubectl-port-forward)
@@ -171,6 +172,16 @@
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl exec -ti                           |                                                                         |
+
+
+
+
+
+## kubectl explain
+
+| Key/Command                                | Description                                                             |
+| ------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl explain <resource>.<key>           |                                                                         |
 
 
 
