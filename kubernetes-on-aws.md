@@ -30,6 +30,8 @@
 
 
 
+
+
 ## Need to be install.
 * `awscli` - Needed to authenticate and run commands on to AWS.
 * `kubectl` - Needed to for management of K8s Cluster.
@@ -48,5 +50,9 @@
 
 ## Location of Cluster Configuration File.
 `/home/userName/.kube/config` - Configuration kubectl with K8s Cluster.
+
+
+
+
 
 ## Help.

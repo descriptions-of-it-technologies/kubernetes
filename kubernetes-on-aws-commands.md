@@ -1,4 +1,4 @@
-# Kubernetes Cluster on Amazon Web Services.
+# Kubernetes Cluster on Amazon Web Services. Commands.
 
 
 
