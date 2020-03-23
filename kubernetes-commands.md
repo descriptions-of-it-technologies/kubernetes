@@ -11,6 +11,7 @@
 * [Minikube Commands.](minikube-commands.md)
 * [General.](#general)
 * [kubectl apply](#kubectl-apply)
+* [kubectl run](#kubectl-run)
 * [kubectl config](#kubectl-config)
 * [kubectl cp](#kubectl-cp)
 * [kubectl cluster-info](#kubectl-cluster-info)
@@ -57,7 +58,18 @@
 
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl apply -f'                          |                                                                         |
+| kubectl apply -f                           |                                                                         |
+| kubectl apply -f [nameFile]                | Run pod via manifest file.                                              |
+
+
+
+
+
+## kubectl run
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl run [namePod] -- generator=run-pod/v1 --image=[nameDockerImage] --port=[numberPort]                        |                                                                         |
 
 
 
@@ -117,10 +129,11 @@
 | kubectl delete configmap                   |                                                                         |
 | kubectl delete deployment                  |                                                                         |
 | kubectl delete -f                          |                                                                         |
+| kubectl delete -f [nameManifestFile]       |                                                                         |
 | kubectl delete ingress                     |                                                                         |
 | kubectl delete node                        |                                                                         |
 | kubectl delete namespace                   |                                                                         |
-| kubectl delete pods                        |                                                                         |
+| kubectl delete pods [podName]              |                                                                         |
 | kubectl delete pvc                         |                                                                         |
 | kubectl delete svc                         |                                                                         |
 | kubectl delete secret                      |                                                                         |
@@ -137,7 +150,7 @@
 | kubectl describe ingress                   |                                                                         |
 | kubectl describe node                      |                                                                         |
 | kubectl describe namespace                 |                                                                         |
-| kubectl describe pods                      |                                                                         |
+| kubectl describe pods [podName]            |                                                                         |
 | kubectl describe pvc                       |                                                                         |
 | kubectl describe svc                       |                                                                         |
 | kubectl describe secret                    |                                                                         |
@@ -172,6 +185,8 @@
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl exec -ti                           |                                                                         |
+| kubectl exec [namePod] [command]           | Execute command in pod.                                                 |
+| kubectl exec -it [namePod] [command]       | Execute interactive command in pod.                                     |
 
 
 
@@ -229,6 +244,7 @@
 | kubectl logs --since 1h -f                 |                                                                         |
 | kubectl logs --since 1m -f                 |                                                                         |
 | kubectl logs --since 1s -f                 |                                                                         |
+| kubectl logs [podName]                     | Show log of pod.                                                        |
 
 
 
@@ -239,6 +255,7 @@
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl port-forward                       |                                                                         | 
+| kubectl port-forward [podName] 7788:80     |                                                                         | 
 
 
 

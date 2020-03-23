@@ -126,6 +126,12 @@
 
 
 
+## Manifest File.
+
+
+
+
+
 ## Docker Image Registry.
 * [DockerHub.]()
 * [AWS Container Registry (ECR).]()
