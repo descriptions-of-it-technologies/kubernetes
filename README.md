@@ -19,7 +19,6 @@
 * [Pros.](#pros)
 * [Managers Kubernetes Configuration.](#managers-kubernetes-configuration)
 * [Metrics and Alerting.](#metrics-and-alerting)
-* [Handling Logging.](#handling-logging)
 * [Cloud Native Computing Foundation (CNCF).](#cloud-native-computing-foundation-cncf)
 * [Alternatives Kubernetes.](#alternatives-kubernetes)
 * [The platforms maybe also include.](#the-platforms-maybe-also-include)
@@ -201,13 +200,6 @@
 
 
 
-## Handling Logging.
-* [Fluentd.](https://www.fluentd.org/)
-
-
-
-
-
 ## Cloud Native Computing Foundation (CNCF).
 * [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/)
 * [Project Services and Maturity Levels.](https://www.cncf.io/projects/)
@@ -241,7 +233,8 @@
 * [ELK.](https://www.google.com/search?q=loggin+elk&oq=loggin+elk&aqs=chrome..69i57j0l7.20141j0j7&sourceid=chrome&ie=UTF-8)
 * [Loki.](https://www.google.com/search?newwindow=1&safe=active&sxsrf=ALeKk02Jtv3Wgx8J32kI1ho-XxShR7miCA%3A1585389991277&ei=pyF_XsPDEILmU-7koogE&q=logging+loki&oq=logging+loki&gs_lcp=CgZwc3ktYWIQAzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQR1AAWABg2qEEaABwBHgAgAEAiAEAkgEAmAEAqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwiDs4r69bzoAhUC8xQKHW6yCEEQ4dUDCAs&uact=5)
 * [Graylog.](https://www.google.com/search?newwindow=1&safe=active&sxsrf=ALeKk01ZacX2fhS2umPgJ6i4hyO5oKnTgw%3A1585390062201&ei=7iF_XvTzC92DjLsP4sWyoAk&q=logging+graylog&oq=logging+gredlog&gs_lcp=CgZwc3ktYWIQARgAMgYIABANEB4yCAgAEA0QBRAeMggIABANEAUQHjIICAAQDRAFEB4yCAgAEA0QBRAeMggIABANEAUQHjIICAAQDRAFEB4yCAgAEA0QBRAeMggIABANEAUQHjIICAAQDRAFEB46BAgAEEc6BAgjECc6BggAEBYQHjoCCAA6BwgAEBQQhwI6BQgAEJECOgQIABAKOggIIRAWEB0QHjoECAAQDToFCCEQoAFQ5okFWNrfBWCg-wVoAHACeACAAWqIAZcHkgEEMTAuMZgBAKABAaoBB2d3cy13aXo&sclient=psy-ab)
-
+* [LOGSTASH.](https://www.elastic.co/logstash)
+* [Fluentd.](https://www.fluentd.org/)
 
 
 
