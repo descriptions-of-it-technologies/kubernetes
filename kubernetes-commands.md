@@ -7,9 +7,11 @@
 ## Contents at a Glance.
 * [About.](#about)
 * [Documentation.](#documentation)
-* [Minikube Main Information.](minikube-main-information.md)
+* [kubectl Cheat Sheet. Official.](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+* [Kubectl Kubernetes CheatSheet.](https://github.com/dennyzhang/cheatsheet-kubernetes-A4)
 * [Minikube Commands.](minikube-commands.md)
 * [General.](#general)
+* [kubectl create](#kubectl-create)
 * [kubectl apply](#kubectl-apply)
 * [kubectl run](#kubectl-run)
 * [kubectl config](#kubectl-config)
@@ -54,12 +56,26 @@
 
 
 
+## kubectl create
+
+| Key/Command                                | Description                                                             |
+| ------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f manifest.yml             | Create.                                                                 |
+|                                            |                                                                         |
+
+
+
+
+
 ## kubectl apply
 
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl apply -f                           |                                                                         |
-| kubectl apply -f [nameFile]                | Run pod via manifest file.                                              |
+| kubectl apply -f manifest.yml              | Create or modify.                                                       |
+| kubectl apply -f link                      |                                                                         |
+| kubectl apply -f directory/                |                                                                         |
+|                                            |                                                                         |
 
 
 
@@ -77,15 +93,16 @@
 
 ## kubectl config
 
-| Key/Command                                | Description                                                             |
-| ------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl config current-context             |
-| kubectl config delete-context              |
-| kubectl config get-contexts                |
-| kubectl config set-context                 |
-| kubectl config set-context                 |                                                                         |
-| kubectl config use-context                 |                                                                         |
-
+| Key/Command                                                                           | Description                                                             |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| kubectl config current-context                                                        |                                                                         |
+| kubectl config delete-context                                                         |                                                                         |
+| kubectl config get-contexts                                                           |                                                                         |
+| kubectl config set-cluster [clusterName]                                              |                                                                         |
+| kubectl config set-credentials [userName]                                             |                                                                         |
+| kubectl config set-context [contextName] --cluster=[clusterName] --user=[userName]    |                                                                         |
+| kubectl config use-context [contextName]                                              |                                                                         |
+|                                                                                       |                                                                         |
 
 
 
