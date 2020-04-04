@@ -88,7 +88,7 @@
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl run [namePod] -- generator=run-pod/v1 --image=[nameDockerImage] --port=[numberPort]                        |                                                                         |
 | kubectl run [namePod] --image [nameImage] --replicas [numberOfReplicas]                                            |                                                                         |
-
+|                                                                                                                    |                                                                         |
 
 
 
