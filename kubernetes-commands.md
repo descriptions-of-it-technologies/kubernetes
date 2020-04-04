@@ -51,7 +51,8 @@
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl                                    |                                                                         |
-
+| kubectl -n kube-system get all             |                                                                         |
+|                                            |                                                                         |
 
 
 
@@ -86,6 +87,7 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl run [namePod] -- generator=run-pod/v1 --image=[nameDockerImage] --port=[numberPort]                        |                                                                         |
+| kubectl run [namePod] --image [nameImage] --replicas [numberOfReplicas]                                            |                                                                         |
 
 
 
@@ -112,7 +114,7 @@
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl cp                                 |                                                                         |
-
+|                                            |                                                                         |
 
 
 
@@ -122,6 +124,7 @@
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl cluster-info                       | Show information about K8s Cluster.                                     |
+|                                            |                                                                         |
 
 
 
@@ -133,6 +136,8 @@
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl version                            | Show version of kubectl client and version of server (cluster).         |
 | kubectl version --client                   | Show version of kubectl client.                                         |
+| kubectl version --short                    |                                                                         |
+|                                            |                                                                         |
 
 
 
@@ -155,6 +160,7 @@
 | kubectl delete svc                         |                                                                         |
 | kubectl delete secret                      |                                                                         |
 | kubectl delete statefulset                 |                                                                         |
+|                                            |                                                                         |
 
 
 
@@ -174,6 +180,7 @@
 | kubectl describe statefulset               |                                                                         |
 | kubectl describe configmap                 |                                                                         |
 | kubectl describe deployment                |                                                                         |
+|                                            |                                                                         |
 
 
 
@@ -192,6 +199,7 @@
 | kubectl edit pvc                           |                                                                         |
 | kubectl edit svc                           |                                                                         |
 | kubectl edit statefulset                   |                                                                         |
+|                                            |                                                                         |
 
 
 
@@ -204,6 +212,7 @@
 | kubectl exec -ti                           |                                                                         |
 | kubectl exec [namePod] [command]           | Execute command in pod.                                                 |
 | kubectl exec -it [namePod] [command]       | Execute interactive command in pod.                                     |
+|                                            |                                                                         |
 
 
 
@@ -214,6 +223,7 @@
 | Key/Command                                | Description                                                             |
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl explain <resource>.<key>           |                                                                         |
+|                                            |                                                                         |
 
 
 
@@ -232,6 +242,7 @@
 | kubectl get ingress                        |                                                                         |
 | kubectl get ingress --all-namespaces       |                                                                         |
 | kubectl get nodes                          | Show all servers (nods) K8s Cluster.                                    |
+| kubectl get nodes -o wide                  |                                                                         |
 | kubectl get namespaces                     |                                                                         |
 | kubectl get pods                           |                                                                         |
 | kubectl get pods --all-namespaces          |                                                                         |
@@ -245,6 +256,8 @@
 | kubectl get statefulset                    |                                                                         |
 | kubectl get statefulset --all-namespaces   |                                                                         |
 | kubectl get componentstatuses              | Show status of K8s Cluster.                                             |
+| kubectl get sc                             |                                                                         |
+|                                            |                                                                         |
 
 
 
@@ -262,6 +275,7 @@
 | kubectl logs --since 1m -f                 |                                                                         |
 | kubectl logs --since 1s -f                 |                                                                         |
 | kubectl logs [podName]                     | Show log of pod.                                                        |
+|                                            |                                                                         |
 
 
 
@@ -273,6 +287,7 @@
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl port-forward                       |                                                                         | 
 | kubectl port-forward [podName] 7788:80     |                                                                         | 
+|                                            |                                                                         |
 
 
 
@@ -286,6 +301,7 @@
 | kubectl rollout status deployment          |                                                                         |
 | kubectl rollout status statefulset         |                                                                         |
 | kubectl rollout undo                       |                                                                         |
+|                                            |                                                                         |
 
 
 
@@ -297,6 +313,7 @@
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl scale deployment                   |                                                                         |
 | kubectl scale statefulset                  |                                                                         |
+|                                            |                                                                         |
 
 
 
