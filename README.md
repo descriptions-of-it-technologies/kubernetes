@@ -31,6 +31,8 @@
 * [CI/CD Services.](#cicd-services)
 * [CI/CD Kubernetes Technologies.](#cicd-kubernetes-technologies)
 * [Technologies.](#technologies)
+* [Kind Main Information.](#kubernetes-main-information)
+* [Kind Commands.](kind-commands.md)
 * [Minikube Main Information.](minikube-main-information.md)
 * [Minikube Commands.](minikube-commands.md)
 * [Kubernetes on Amazon Web Services.](kubernetes-on-aws.md)
