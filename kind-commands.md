@@ -34,7 +34,8 @@
 | kind create cluster --config [configFile]                          |                                                                                                                    |
 | kind delete cluster                                                |                                                                                                                    |
 | kind get clusters                                                  |                                                                                                                    |
-| kind get nods                                                      |                                                                                                                    |
+| kind get nodes                                                     |                                                                                                                    |
+| kind get nodes --name [nameCluster]                                |                                                                                                                    |
 |                                                                    |                                                                                                                    |
 
 
