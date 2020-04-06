@@ -14,13 +14,13 @@
 * [node](#node)
 * [deployment](#deployment)
 * [pod](#pod)
+* [service](#service)
 * [namespace](#namespace)
 * [configmap](#configmap)
 * [secrets](#secrets)
 * [ingress](#ingress)
 * [statefulset](#statefulset)
 * [pvc](#pvc)
-* [svc](#svc)
 * [General.](#general)
 * [kubectl create](#kubectl-create)
 * [kubectl apply](#kubectl-apply)
@@ -83,14 +83,19 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create deployment [deploymentName] --image=[imageName:version]                                             |                                                                         |
+| kubectl create -f [configFileDeployment]                                                                           | Create deployment by config file.                                       |
 | kubectl describe deployment                                                                                        |                                                                         |
 | kubectl get deployment                                                                                             |                                                                         |
 | kubectl get deployment --all-namespaces                                                                            |                                                                         |
+| kubectl get deploy [nameDeploy] -o yaml > [toFile]                                                                 | Get configuration of deployment. Example to file - /tmp/deployment.yaml |
 | kubectl scale deployment                                                                                           |                                                                         |
 | kubectl scale deploy [nameDeployment] --replicas [numberOfReplicas]                                                |                                                                         |
 | kubectl edit deployment                                                                                            |                                                                         |
+| kubectl port-forward deployment/[deploymentName] [localMachinePort]:[containerPort]                                |                                                                         |
+| kubectl expose deployment [nameDeployment] --type NodePort --port [numberOfPort]                                   |                                                                         |
 | kubectl delete deployment                                                                                          |                                                                         |
-| kubectl delete deploy [nameDeployment]                                                                             |                                                                         |
+| kubectl delete deploy [nameDeployment]                                                                             | Delete deployment by name.                                              |
+| kubectl delete -f [configFileDeployment]                                                                           | Delete deployment by config file.                                       |
 | kubectl rollout status deployment                                                                                  |                                                                         |
 |                                                                                                                    |                                                                         |
 
@@ -102,7 +107,7 @@
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl describe pods [podName]                                                                                    |                                                                         |
+| kubectl describe pod [podName]                                                                                     |                                                                         |
 | kubectl run [namePod] -- generator=run-pod/v1 --image=[nameDockerImage] --port=[numberPort]                        |                                                                         |
 | kubectl run [namePod] --image [nameImage] --replicas [numberOfReplicas]                                            |                                                                         |
 | kubectl run [namePod] --rm -it --image [nameImage] -- sh                                                           |                                                                         |
@@ -112,6 +117,7 @@
 | kubectl edit pods                                                                                                  |                                                                         |
 | kubectl exec [namePod] [command]                                                                                   | Execute command in pod.                                                 |
 | kubectl exec -it [namePod] [command]                                                                               | Execute interactive command in pod.                                     |
+| kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                              |                                                                         | 
 | kubectl port-forward [podName] [localMachinePort]:[containerPort]                                                  |                                                                         | 
 | kubectl delete pods [podName]                                                                                      |                                                                         |
 |                                                                                                                    |                                                                         |
@@ -119,6 +125,25 @@
  
  
  
+
+## service
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFielService]                                                                              | Create service by config file.                                          |
+| kubectl describe svc                                                                                               | Describe service.                                                       |
+| kubectl get svc                                                                                                    |                                                                         |
+| kubectl get svc --all-namespaces                                                                                   |                                                                         |
+| kubectl get svc [nameDeploy] -o yaml > [toFile]                                                                    | Get configuration of service. Example to file - /tmp/svc-conf.yaml      |
+| kubectl edit svc                                                                                                   |                                                                         |
+| kubectl port-forward service/[serviceName] [localMachinePort]:[containerPort]                                      |                                                                         |
+| kubectl delete svc                                                                                                 | Delete service by name.                                                 |
+| kubectl delete -f [configFielService]                                                                              | Delete service by config file.                                          |
+|                                                                                                                    |                                                                         |
+
+
+
+
 
 ## namespace
 
@@ -204,21 +229,6 @@
 | kubectl get pvc --all-namespaces                                                                                   |                                                                         |
 | kubectl edit pvc                                                                                                   |                                                                         |
 | kubectl delete pvc                                                                                                 |                                                                         |
-|                                                                                                                    |                                                                         |
-
-
-
-
-
-## svc
-
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl describe svc                                                                                               |                                                                         |
-| kubectl get svc                                                                                                    |                                                                         |
-| kubectl get svc --all-namespaces                                                                                   |                                                                         |
-| kubectl edit svc                                                                                                   |                                                                         |
-| kubectl delete svc                                                                                                 |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
