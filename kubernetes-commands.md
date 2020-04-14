@@ -15,6 +15,7 @@
 * [deployment](#deployment)
 * [pod](#pod)
 * [service](#service)
+* [replicaset](#replicaset)
 * [namespace](#namespace)
 * [configmap](#configmap)
 * [secrets](#secrets)
@@ -52,6 +53,21 @@
 
 
 
+## General. 
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl                                                                                                            |                                                                         |
+| kubectl -n kube-system get all                                                                                     |                                                                         |
+| kubectl events                                                                                                     | Show events.                                                            |
+| watch kubectl get all -o wide                                                                                      |                                                                         |
+| kubectl -n  kube-system get pods                                                                                   |                                                                         |
+| kubectl -n kube-system get pod [namePOd] -o yaml > /tmp/myPodConfig.yaml                                           |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
 ## cluster 
 
 | Key/Command                                                                                                        | Description                                                             |
@@ -83,7 +99,7 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create deployment [deploymentName] --image=[imageName:version]                                             |                                                                         |
-| kubectl create -f [configFileDeployment]                                                                           | Create deployment by config file.                                       |
+| kubectl create -f [configFile]                                                                                     | Create deployment by config file.                                       |
 | kubectl describe deployment                                                                                        |                                                                         |
 | kubectl get deployment                                                                                             |                                                                         |
 | kubectl get deployment --all-namespaces                                                                            |                                                                         |
@@ -95,7 +111,7 @@
 | kubectl expose deployment [nameDeployment] --type NodePort --port [numberOfPort]                                   |                                                                         |
 | kubectl delete deployment                                                                                          |                                                                         |
 | kubectl delete deploy [nameDeployment]                                                                             | Delete deployment by name.                                              |
-| kubectl delete -f [configFileDeployment]                                                                           | Delete deployment by config file.                                       |
+| kubectl delete -f [configFile]                                                                                     | Delete deployment by config file.                                       |
 | kubectl rollout status deployment                                                                                  |                                                                         |
 |                                                                                                                    |                                                                         |
 
@@ -114,12 +130,14 @@
 | kubectl logs [podName]                                                                                             | Show log of pod.                                                        |
 | kubectl get pods                                                                                                   |                                                                         |
 | kubectl get pods --all-namespaces                                                                                  |                                                                         |
+| kubectl get pods -l [labelName]                                                                                    | Get pods by label name.                                                 |
 | kubectl edit pods                                                                                                  |                                                                         |
 | kubectl exec [namePod] [command]                                                                                   | Execute command in pod.                                                 |
 | kubectl exec -it [namePod] [command]                                                                               | Execute interactive command in pod.                                     |
 | kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                              |                                                                         | 
 | kubectl port-forward [podName] [localMachinePort]:[containerPort]                                                  |                                                                         | 
 | kubectl delete pods [podName]                                                                                      |                                                                         |
+| kubectl delete -f [configFile]                                                                                     |                                                                         |
 |                                                                                                                    |                                                                         |
  
  
@@ -138,7 +156,21 @@
 | kubectl edit svc                                                                                                   |                                                                         |
 | kubectl port-forward service/[serviceName] [localMachinePort]:[containerPort]                                      |                                                                         |
 | kubectl delete svc                                                                                                 | Delete service by name.                                                 |
-| kubectl delete -f [configFielService]                                                                              | Delete service by config file.                                          |
+| kubectl delete -f [configFile]                                                                                     | Delete service by config file.                                          |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## replicaset
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [nameConfig]                                                                                     |                                                                         |
+| kubectl describe replicasets [nameReplicaset]                                                                      |                                                                         |
+| kubectl delete replicasets [nameReplicaset]                                                                        |                                                                         |
+| kubectl delete -f [nameConfig]                                                                                     |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
@@ -230,18 +262,6 @@
 | kubectl edit pvc                                                                                                   |                                                                         |
 | kubectl delete pvc                                                                                                 |                                                                         |
 |                                                                                                                    |                                                                         |
-
-
-
-
-
-## General. 
-
-| Key/Command                                | Description                                                             |
-| ------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl                                    |                                                                         |
-| kubectl -n kube-system get all             |                                                                         |
-|                                            |                                                                         |
 
 
 
