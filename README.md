@@ -18,6 +18,7 @@
 * [Info.](#info)
 * [Pros.](#pros)
 * [Managers Kubernetes Configuration.](#managers-kubernetes-configuration)
+* [Multi-cloud continuous delivery platform.](#multi-cloud-continuous-delivery-platform)
 * [Metrics and Alerting.](#metrics-and-alerting)
 * [Cloud Native Computing Foundation (CNCF).](#cloud-native-computing-foundation-cncf)
 * [Alternatives Kubernetes.](#alternatives-kubernetes)
@@ -189,6 +190,13 @@
 ## Managers Kubernetes Configuration.
 * [Helm.](https://helm.sh/)
 * [Envoy.](https://www.envoyproxy.io/)
+
+
+
+
+
+## Multi-cloud continuous delivery platform.
+* [Spinnaker.](https://www.spinnaker.io/)
 
 
 

@@ -10,6 +10,7 @@
 * [kubectl Cheat Sheet. Official.](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 * [Kubectl Kubernetes CheatSheet.](https://github.com/dennyzhang/cheatsheet-kubernetes-A4)
 * [Minikube Commands.](minikube-commands.md)
+* [kubectl tools.]()
 * [cluster](#cluster)
 * [node](#node)
 * [deployment](#deployment)
@@ -19,6 +20,7 @@
 * [namespace](#namespace)
 * [configmap](#configmap)
 * [secrets](#secrets)
+* [context](#context)
 * [ingress](#ingress)
 * [statefulset](#statefulset)
 * [pvc](#pvc)
@@ -53,6 +55,16 @@
 
 
 
+## kubectl tools.
+* [Krew](https://krew.sigs.k8s.io/)
+* [stern]()
+* [kubectx]()
+* [kubens]()
+
+
+
+
+
 ## General. 
 
 | Key/Command                                                                                                        | Description                                                             |
@@ -62,7 +74,8 @@
 | kubectl events                                                                                                     | Show events.                                                            |
 | watch kubectl get all -o wide                                                                                      |                                                                         |
 | kubectl -n  kube-system get pods                                                                                   |                                                                         |
-| kubectl -n kube-system get pod [namePOd] -o yaml > /tmp/myPodConfig.yaml                                           |                                                                         |
+| kubectl --namespace kube-system get pods                                                                           |                                                                         |
+| kubectl -n kube-system get pod [namePod] -o yaml > /tmp/myPodConfig.yaml                                           |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
@@ -129,6 +142,7 @@
 | kubectl run [namePod] --rm -it --image [nameImage] -- sh                                                           |                                                                         |
 | kubectl logs [podName]                                                                                             | Show log of pod.                                                        |
 | kubectl get pods                                                                                                   |                                                                         |
+| kubectl get pods --namespaces=[namespace]                                                                          |                                                                         |
 | kubectl get pods --all-namespaces                                                                                  |                                                                         |
 | kubectl get pods -l [labelName]                                                                                    | Get pods by label name.                                                 |
 | kubectl edit pods                                                                                                  |                                                                         |
@@ -182,7 +196,10 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl describe namespace                                                                                         |                                                                         |
+| kubectl create namespaces [nameNamespace]                                                                          |                                                                         |
 | kubectl get namespaces                                                                                             |                                                                         |
+| kubectl get ns                                                                                                     |                                                                         |
+| kubectl get all --all-namespaces                                                                                   |                                                                         |
 | kubectl edit namespace                                                                                             |                                                                         |
 | kubectl delete namespace                                                                                           |                                                                         |
 |                                                                                                                    |                                                                         |
@@ -214,6 +231,22 @@
 | kubectl get secret                                                                                                 |                                                                         |
 | kubectl get secret --all-namespaces                                                                                |                                                                         |
 | kubectl delete secret                                                                                              |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## context
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl config current-context                                                                                     |                                                                         |
+| kubectl config set-context [contextName] --namespace=[namespace] --user=[userName] --cluster=[clusterName]         |                                                                         |
+| kubectl config set-context [contextName] --cluster=[clusterName] --user=[userName]                                 |                                                                         |
+| kubectl config get-contexts                                                                                        |                                                                         |
+| kubectl config use-context [contextName]                                                                           |                                                                         |
+| kubectl config delete-context                                                                                      |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
@@ -323,7 +356,6 @@
 | ------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl get all                            |                                                                         |
 | kubectl get all -o wide                    |                                                                         |
-| kubectl get all --all-namespaces           |                                                                         |
 | kubectl get rs                             |                                                                         |
 | kubectl get componentstatuses              | Show status of K8s Cluster.                                             |
 | kubectl get sc                             |                                                                         |
@@ -337,14 +369,9 @@
 
 | Key/Command                                                                           | Description                                                             |
 | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| kubectl config current-context                                                        |                                                                         |
-| kubectl config delete-context                                                         |                                                                         |
-| kubectl config get-contexts                                                           |                                                                         |
 | kubectl config set-cluster [clusterName]                                              |                                                                         |
 | kubectl config set-credentials [userName]                                             |                                                                         |
-| kubectl config set-context [contextName] --cluster=[clusterName] --user=[userName]    |                                                                         |
-| kubectl config use-context [contextName]                                              |                                                                         |
-|                                                                                       |                                                                         |
+| kubectl config view                                                                   |                                                                         |
 
 
 
