@@ -100,6 +100,7 @@
 | kubectl get nodes                                                                                                  | Show all servers (nods) K8s Cluster.                                    |
 | kubectl get nodes -o wide                                                                                          |                                                                         |
 | kubectl edit node                                                                                                  |                                                                         |
+| kubectl explain node                                                                                               |                                                                         |
 | kubectl delete node                                                                                                |                                                                         |
 |                                                                                                                    |                                                                         |
 
@@ -117,6 +118,7 @@
 | kubectl get deployment                                                                                             |                                                                         |
 | kubectl get deployment --all-namespaces                                                                            |                                                                         |
 | kubectl get deploy [nameDeploy] -o yaml > [toFile]                                                                 | Get configuration of deployment. Example to file - /tmp/deployment.yaml |
+| kubectl explain deployment                                                                                         |                                                                         |
 | kubectl scale deployment                                                                                           |                                                                         |
 | kubectl scale deploy [nameDeployment] --replicas [numberOfReplicas]                                                |                                                                         |
 | kubectl edit deployment                                                                                            |                                                                         |
@@ -145,7 +147,9 @@
 | kubectl get pods --namespaces=[namespace]                                                                          |                                                                         |
 | kubectl get pods --all-namespaces                                                                                  |                                                                         |
 | kubectl get pods -l [labelName]                                                                                    | Get pods by label name.                                                 |
+| kubectl explain pods                                                                                               |                                                                         |
 | kubectl edit pods                                                                                                  |                                                                         |
+| kubectl edit pods [namePod]                                                                                        |                                                                         |
 | kubectl exec [namePod] [command]                                                                                   | Execute command in pod.                                                 |
 | kubectl exec -it [namePod] [command]                                                                               | Execute interactive command in pod.                                     |
 | kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                              |                                                                         | 
@@ -167,6 +171,7 @@
 | kubectl get svc                                                                                                    |                                                                         |
 | kubectl get svc --all-namespaces                                                                                   |                                                                         |
 | kubectl get svc [nameDeploy] -o yaml > [toFile]                                                                    | Get configuration of service. Example to file - /tmp/svc-conf.yaml      |
+| kubectl explain svc                                                                                                |                                                                         |
 | kubectl edit svc                                                                                                   |                                                                         |
 | kubectl port-forward service/[serviceName] [localMachinePort]:[containerPort]                                      |                                                                         |
 | kubectl delete svc                                                                                                 | Delete service by name.                                                 |
@@ -183,6 +188,7 @@
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create -f [nameConfig]                                                                                     |                                                                         |
 | kubectl describe replicasets [nameReplicaset]                                                                      |                                                                         |
+| kubectl explain replicasets                                                                                        |                                                                         |
 | kubectl delete replicasets [nameReplicaset]                                                                        |                                                                         |
 | kubectl delete -f [nameConfig]                                                                                     |                                                                         |
 |                                                                                                                    |                                                                         |
@@ -200,6 +206,7 @@
 | kubectl get namespaces                                                                                             |                                                                         |
 | kubectl get ns                                                                                                     |                                                                         |
 | kubectl get all --all-namespaces                                                                                   |                                                                         |
+| kubectl explain ns                                                                                                 |                                                                         |
 | kubectl edit namespace                                                                                             |                                                                         |
 | kubectl delete namespace                                                                                           |                                                                         |
 |                                                                                                                    |                                                                         |
