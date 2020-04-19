@@ -21,6 +21,9 @@
 * [configmap](#configmap)
 * [secrets](#secrets)
 * [context](#context)
+* [daemonset](#daemonset)
+* [job](#job)
+* [cronjob](#cronjob)
 * [ingress](#ingress)
 * [statefulset](#statefulset)
 * [pvc](#pvc)
@@ -99,8 +102,11 @@
 | kubectl describe node                                                                                              |                                                                         |
 | kubectl get nodes                                                                                                  | Show all servers (nods) K8s Cluster.                                    |
 | kubectl get nodes -o wide                                                                                          |                                                                         |
-| kubectl edit node                                                                                                  |                                                                         |
+| kubectl get node [nameNode] --show-labels                                                                          |                                                                         |
+| kubectl get nodes -l [label]                                                                                       | Get nodes whit this label.v                                             |
 | kubectl explain node                                                                                               |                                                                         |
+| kubectl edit node                                                                                                  |                                                                         |
+| kubectl label node [nodeName] [labelName]                                                                          |                                                                         |
 | kubectl delete node                                                                                                |                                                                         |
 |                                                                                                                    |                                                                         |
 
@@ -154,7 +160,8 @@
 | kubectl exec -it [namePod] [command]                                                                               | Execute interactive command in pod.                                     |
 | kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                              |                                                                         | 
 | kubectl port-forward [podName] [localMachinePort]:[containerPort]                                                  |                                                                         | 
-| kubectl delete pods [podName]                                                                                      |                                                                         |
+| kubectl delete pod [podName]                                                                                       |                                                                         |
+| kubectl delete pods --all                                                                                          |                                                                         |
 | kubectl delete -f [configFile]                                                                                     |                                                                         |
 |                                                                                                                    |                                                                         |
  
@@ -166,7 +173,7 @@
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl create -f [configFielService]                                                                              | Create service by config file.                                          |
+| kubectl create -f [configFile]                                                                                     | Create service by config file.                                          |
 | kubectl describe svc                                                                                               | Describe service.                                                       |
 | kubectl get svc                                                                                                    |                                                                         |
 | kubectl get svc --all-namespaces                                                                                   |                                                                         |
@@ -186,11 +193,11 @@
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl create -f [nameConfig]                                                                                     |                                                                         |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
 | kubectl describe replicasets [nameReplicaset]                                                                      |                                                                         |
 | kubectl explain replicasets                                                                                        |                                                                         |
 | kubectl delete replicasets [nameReplicaset]                                                                        |                                                                         |
-| kubectl delete -f [nameConfig]                                                                                     |                                                                         |
+| kubectl delete -f [configFile]                                                                                     |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
@@ -254,6 +261,48 @@
 | kubectl config get-contexts                                                                                        |                                                                         |
 | kubectl config use-context [contextName]                                                                           |                                                                         |
 | kubectl config delete-context                                                                                      |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## daemonset
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl describe daemonset [nameDaemonset] | less                                                                  |                                                                         |
+| kubectl get daemonset -n kube-system                                                                               |                                                                         |
+| kubectl delete daemonset [nameDaemonset]                                                                           |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## job
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl describe job [nameJob]                                                                                     |                                                                         |
+| kubectl delete job [nameJob]                                                                                       |                                                                         |
+| kubectl delete -f [configFile]                                                                                     |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## cronjob
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl describe cronjob [nameCronjob]                                                                             |                                                                         |
+| kubectl delete cronjob [nameCronjob]                                                                               |                                                                         |
+| kubectl delete -f [configFile]                                                                                     |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
