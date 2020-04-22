@@ -7,7 +7,6 @@
 ## Contents at a Glance.
 * [About.](#about)
 * [Documentation.](#documentation)
-* [Help.](#help)
 * [cluster](#cluster)
 * [node](#node)
 * [deployment](#deployment)
@@ -21,7 +20,8 @@
 * [cronjob](#cronjob)
 * [secrets](#secrets)
 * [configmap](#configmap)
-* [initContainer](#initContainer)
+* [initContainer](#initcontainer)
+* [Help.](#help)
 
 
 
