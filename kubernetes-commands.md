@@ -79,6 +79,7 @@
 | kubectl -n  kube-system get pods                                                                                   |                                                                         |
 | kubectl --namespace kube-system get pods                                                                           |                                                                         |
 | kubectl -n kube-system get pod [namePod] -o yaml > /tmp/myPodConfig.yaml                                           |                                                                         |
+| kubectl describe storageclasses                                                                                    |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
