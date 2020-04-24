@@ -24,9 +24,10 @@
 * [daemonset](#daemonset)
 * [job](#job)
 * [cronjob](#cronjob)
+* [persistent volume](#persistent-volume)
+* [persistent volume claim](#persistent-volume-claim)
 * [ingress](#ingress)
 * [statefulset](#statefulset)
-* [pvc](#pvc)
 * [General.](#general)
 * [kubectl create](#kubectl-create)
 * [kubectl apply](#kubectl-apply)
@@ -158,6 +159,7 @@
 | kubectl edit pods                                                                                                  |                                                                         |
 | kubectl edit pods [namePod]                                                                                        |                                                                         |
 | kubectl exec [namePod] [command]                                                                                   | Execute command in pod.                                                 |
+| kubectl exec [namePod] -- ls                                                                                       |                                                                         |
 | kubectl exec -it [namePod] [command]                                                                               | Execute interactive command in pod.                                     |
 | kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                              |                                                                         | 
 | kubectl port-forward [podName] [localMachinePort]:[containerPort]                                                  |                                                                         | 
@@ -310,6 +312,39 @@
 
 
 
+## persistent volume
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFle]                                                                                      |                                                                         |
+| kubectl describe pv                                                                                                |                                                                         |
+| kubectl get pv                                                                                                     |                                                                         |
+| kubectl get pv --all-namespaces                                                                                    |                                                                         |
+| kubectl edit pv                                                                                                    |                                                                         |
+| kubectl delete pv                                                                                                  |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## persistent volume claim
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFle]                                                                                      |                                                                         |
+| kubectl describe pvc                                                                                               |                                                                         |
+| kubectl get pvc                                                                                                    |                                                                         |
+| kubectl get pvc --all-namespaces                                                                                   |                                                                         |
+| kubectl edit pvc                                                                                                   |                                                                         |
+| kubectl delete pvc                                                                                                 |                                                                         |
+|                                                                                                                    |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
 ## ingress
 
 | Key/Command                                                                                                        | Description                                                             |
@@ -336,21 +371,6 @@
 | kubectl delete statefulset                                                                                         |                                                                         |
 | kubectl scale statefulset                                                                                          |                                                                         |
 | kubectl rollout status statefulset                                                                                 |                                                                         |
-|                                                                                                                    |                                                                         |
-
-
-
-
-
-## pvc
-
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl describe pvc                                                                                               |                                                                         |
-| kubectl get pvc                                                                                                    |                                                                         |
-| kubectl get pvc --all-namespaces                                                                                   |                                                                         |
-| kubectl edit pvc                                                                                                   |                                                                         |
-| kubectl delete pvc                                                                                                 |                                                                         |
 |                                                                                                                    |                                                                         |
 
 

@@ -32,10 +32,11 @@
 | kind version                                                       |                                                                                                                    |
 | kind create cluster --name                                         |                                                                                                                    |
 | kind create cluster --config [configFile]                          |                                                                                                                    |
-| kind delete cluster                                                |                                                                                                                    |
 | kind get clusters                                                  |                                                                                                                    |
 | kind get nodes                                                     |                                                                                                                    |
 | kind get nodes --name [nameCluster]                                |                                                                                                                    |
+| kind get kubeconfig                                                |                                                                                                                    |
+| kind delete cluster                                                |                                                                                                                    |
 |                                                                    |                                                                                                                    |
 
 

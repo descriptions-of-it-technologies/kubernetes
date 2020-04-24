@@ -18,6 +18,9 @@
 * [daemonset](#daemonset)
 * [job](#job)
 * [cronjob](#cronjob)
+* [initcontainer](#initcontainer)
+* [persistent-volume](#persistent-volume)
+* [persistent-volume-claim](#persistent-volume-claim)
 * [secrets](#secrets)
 * [configmap](#configmap)
 * [initContainer](#initcontainer)
@@ -125,7 +128,30 @@
 
 
 
-## initContainer
+## initcontainer
+
+
+
+
+
+## persistent volume
+### Reclaim policy.
+* [Retain]()
+* [Recycle(Deprecated)]()
+* [Delete]()
+* hostpath in generally is not used in a production environment, because of hostpath available only on one node.
+* hostpath deleter only supports /tmp/.
+
+### Access mode.
+* [RWO]()
+* [RWM]()
+* [RO]()
+
+
+
+
+
+## persistent volume claim
 
 
 
