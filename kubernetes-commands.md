@@ -18,14 +18,14 @@
 * [service](#service)
 * [replicaset](#replicaset)
 * [namespace](#namespace)
-* [configmap](#configmap)
-* [secrets](#secrets)
-* [context](#context)
 * [daemonset](#daemonset)
 * [job](#job)
 * [cronjob](#cronjob)
 * [persistent volume](#persistent-volume)
 * [persistent volume claim](#persistent-volume-claim)
+* [secret](#secret)
+* [configmap](#configmap)
+* [context](#context)
 * [ingress](#ingress)
 * [statefulset](#statefulset)
 * [General.](#general)
@@ -158,9 +158,11 @@
 | kubectl explain pods                                                                                               |                                                                         |
 | kubectl edit pods                                                                                                  |                                                                         |
 | kubectl edit pods [namePod]                                                                                        |                                                                         |
-| kubectl exec [namePod] [command]                                                                                   | Execute command in pod.                                                 |
+| kubectl exec [namePod] -- [command]                                                                                | Execute command in pod.                                                 |
 | kubectl exec [namePod] -- ls                                                                                       |                                                                         |
-| kubectl exec -it [namePod] [command]                                                                               | Execute interactive command in pod.                                     |
+| kubectl exec [namePod] -- sh                                                                                       |                                                                         |
+| kubectl exec -it [namePod] -- [command]                                                                            | Execute interactive command in pod.                                     |
+| kubectl exec -it [namePod] -c [containerName] -- [command]                                                         |                                                                         |
 | kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                              |                                                                         | 
 | kubectl port-forward [podName] [localMachinePort]:[containerPort]                                                  |                                                                         | 
 | kubectl delete pod [podName]                                                                                       |                                                                         |
@@ -219,35 +221,6 @@
 | kubectl explain ns                                                                                                 |                                                                         |
 | kubectl edit namespace                                                                                             |                                                                         |
 | kubectl delete namespace                                                                                           |                                                                         |
-|                                                                                                                    |                                                                         |
-
-
-
-
-
-## configmap
-
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl describe configmap                                                                                         |                                                                         |
-| kubectl get configmaps                                                                                             |                                                                         |
-| kubectl get configmaps --all-namespaces                                                                            |                                                                         |
-| kubectl edit configmap                                                                                             |                                                                         |
-| kubectl delete configmap                                                                                           |                                                                         |
-|                                                                                                                    |                                                                         |
-
-
-
-
-
-## secrets
-
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl describe secret                                                                                            |                                                                         |
-| kubectl get secret                                                                                                 |                                                                         |
-| kubectl get secret --all-namespaces                                                                                |                                                                         |
-| kubectl delete secret                                                                                              |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
@@ -339,6 +312,46 @@
 | kubectl edit pvc                                                                                                   |                                                                         |
 | kubectl delete pvc                                                                                                 |                                                                         |
 |                                                                                                                    |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## secret
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl create secret generic [secretName] --from-literal=[key]=[value] --from-literal=[key]=[value]               |                                                                         |
+| kubectl create secret generic [secretName] --from-file=[path] --from-file=[path]                                   |                                                                         |
+| kubectl describe secret [nameSecret]                                                                               |                                                                         |
+| kubectl get secrets                                                                                                |                                                                         |
+| kubectl get secret [nameSecret]                                                                                    |                                                                         |
+| kubectl get secret [nameSecret] -o yaml                                                                            |                                                                         |
+| kubectl get secret --all-namespaces                                                                                |                                                                         |
+| kubectl delete secret [nameSecret]                                                                                 |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## configmap
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl create configmap [configmapName] --from-literal=[key]=[value] --from-literal=[key]=[value]                 |                                                                         |
+| kubectl create configmap [configmapName] --from-file=[path]                                                        |                                                                         |
+| kubectl apply -f [configmapName]                                                                                   |                                                                         |
+| kubectl describe configmap [configmapName]                                                                         |                                                                         |
+| kubectl get configmaps                                                                                             |                                                                         |
+| kubectl get cm                                                                                                     |                                                                         |
+| kubectl get cm [configmapName] -o yaml                                                                             |                                                                         |
+| kubectl get configmaps --all-namespaces                                                                            |                                                                         |
+| kubectl edit configmap                                                                                             |                                                                         |
+| kubectl delete configmap                                                                                           |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
