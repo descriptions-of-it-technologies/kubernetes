@@ -81,12 +81,15 @@
 | kubectl --namespace kube-system get pods                                                                           |                                                                         |
 | kubectl -n kube-system get pod [namePod] -o yaml > /tmp/myPodConfig.yaml                                           |                                                                         |
 | kubectl describe storageclasses                                                                                    |                                                                         |
+| kubeadm reset                                                                                                      |                                                                         |
+| kubeadm token create --print-join-command                                                                          |                                                                         |
+| kubeadm join [ipAddressAndPort] --token [token] --discovery-token-ca-cert-hash [value]                             |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
 
 
-## cluster 
+## Cluster. 
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -97,7 +100,7 @@
 
 
 
-## node
+## Node.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -109,19 +112,31 @@
 | kubectl explain node                                                                                               |                                                                         |
 | kubectl edit node                                                                                                  |                                                                         |
 | kubectl label node [nodeName] [labelName]                                                                          |                                                                         |
-| kubectl delete node                                                                                                |                                                                         |
+| kubectl delete node [nameNode]                                                                                     |                                                                         |
+| kubectl drain [nameNode] --ignore-daemonsets                                                                       |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
 
 
 
-## deployment 
+## Deployment. 
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create deployment [deploymentName] --image=[imageName:version]                                             |                                                                         |
 | kubectl create -f [configFile]                                                                                     | Create deployment by config file.                                       |
+| kubectl apply -f [configFile]                                                                                      | Update deployment by config file.                                       |
+| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage]                                        | Update deployment by kubectl command.                                   |
+| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage] --record                               |                                                                         |
+| kubectl rollout pause deployment [deploymentName]                                                                  | Pause updating deployment.                                              |
+| kubectl rollout resume deployment [deploymentName]                                                                 | Resume updating deployment.                                             |
+| kubectl rollout status deployment [deploymentName]                                                                 |                                                                         |
+| kubectl rollout history deployment [deploymentName]                                                                |                                                                         |
+| kubectl rollout history deployment [deploymentName] --revision [numberRevision]                                    |                                                                         |
+| kubectl rollout undo deployment [deploymentName]                                                                   | Rollout to previous version.                                            |
+| kubectl rollout undo deployment [deploymentName] --to-revision=[revisionNumber]                                    | Rollout to specific number of revision.                                 |
+| kubectl annotate deployment [deploymentName] kubernetes.io/change-cause="Update message..."                        |                                                                         |
 | kubectl describe deployment                                                                                        |                                                                         |
 | kubectl get deployment                                                                                             |                                                                         |
 | kubectl get deployment --all-namespaces                                                                            |                                                                         |
@@ -132,6 +147,7 @@
 | kubectl edit deployment                                                                                            |                                                                         |
 | kubectl port-forward deployment/[deploymentName] [localMachinePort]:[containerPort]                                |                                                                         |
 | kubectl expose deployment [nameDeployment] --type NodePort --port [numberOfPort]                                   |                                                                         |
+| kubectl expose deployment [nameDep] --target-port=[port] --port [port] --type=LoadBalancer --namespace=[namespace] |                                                                         |
 | kubectl delete deployment                                                                                          |                                                                         |
 | kubectl delete deploy [nameDeployment]                                                                             | Delete deployment by name.                                              |
 | kubectl delete -f [configFile]                                                                                     | Delete deployment by config file.                                       |
@@ -142,7 +158,7 @@
 
 
 
-## pod
+## Pod.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -174,7 +190,7 @@
  
  
 
-## service
+## Service.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -194,7 +210,7 @@
 
 
 
-## replicaset
+## ReplicaSet.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -209,7 +225,7 @@
 
 
 
-## namespace
+## Namespace.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -227,7 +243,7 @@
 
 
 
-## context
+## Context.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -243,7 +259,7 @@
 
 
 
-## daemonset
+## DaemonSet.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -257,7 +273,7 @@
 
 
 
-## job
+## Job.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -271,7 +287,7 @@
 
 
 
-## cronjob
+## CronJob.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -285,7 +301,7 @@
 
 
 
-## persistent volume
+## PersistentVolume.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -301,7 +317,7 @@
 
 
 
-## persistent volume claim
+## PersistentVolumeClaim.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -318,7 +334,7 @@
 
 
 
-## secret
+## Secret.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -337,7 +353,7 @@
 
 
 
-## configmap
+## Configmap.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
@@ -350,6 +366,7 @@
 | kubectl get cm                                                                                                     |                                                                         |
 | kubectl get cm [configmapName] -o yaml                                                                             |                                                                         |
 | kubectl get configmaps --all-namespaces                                                                            |                                                                         |
+| kubectl get -n [namespace] get cm                                                                                  |                                                                         |
 | kubectl edit configmap                                                                                             |                                                                         |
 | kubectl delete configmap                                                                                           |                                                                         |
 |                                                                                                                    |                                                                         |
@@ -358,7 +375,31 @@
 
 
 
-## ingress
+## ResourceQuota.
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl -n [namespace] describe quota [quotaName]                                                                  |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## LimitRange.
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl -n [namespace] describe limitrange [quotaName]                                                             |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## Ingress.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |

@@ -17,6 +17,7 @@
 * [Kubernetes Cloud Service.](#kubernetes-cloud-services)
 * [Info.](#info)
 * [Pros.](#pros)
+* [Managing Services.](#managing-services)
 * [Managers Kubernetes Configuration.](#managers-kubernetes-configuration)
 * [Multi-cloud continuous delivery platform.](#multi-cloud-continuous-delivery-platform)
 * [Metrics and Alerting.](#metrics-and-alerting)
@@ -187,6 +188,13 @@
 
 
 
+## Managing Services.
+* [Istio.](https://istio.io/)
+
+
+
+
+
 ## Managers Kubernetes Configuration.
 * [Helm.](https://helm.sh/)
 * [Envoy.](https://www.envoyproxy.io/)
@@ -306,7 +314,6 @@
 
 
 ## Technologies.
-* [Istio.](https://istio.io/)
 * [Elastic.](https://www.elastic.co/)
 
 
@@ -334,6 +341,7 @@
 
 
 ## Courses.
+* [Learn Kubernetes](https://www.youtube.com/playlist?list=PL34sAs7_26wNBRWM6BDhnonoA5FMERax0)
 * [Kubernetes на Русском Языке.](https://www.youtube.com/playlist?list=PLg5SS_4L6LYvN1RqaVesof8KAf-02fJSi)
 * [Certified Kubernetes Administrator (CKA) with Practice Tests](https://kodekloud.com/p/certified-kubernetes-administrator-with-practice-tests)
 
