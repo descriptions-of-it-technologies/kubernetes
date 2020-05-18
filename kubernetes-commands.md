@@ -84,6 +84,7 @@
 | kubeadm reset                                                                                                      |                                                                         |
 | kubeadm token create --print-join-command                                                                          |                                                                         |
 | kubeadm join [ipAddressAndPort] --token [token] --discovery-token-ca-cert-hash [value]                             |                                                                         |
+| kubectl get clusterrolebindings [roleName]                                                                         |                                                                         |
 |                                                                                                                    |                                                                         |
 
 

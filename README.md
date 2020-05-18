@@ -37,6 +37,8 @@
 * [Kind Commands.](kind-commands.md)
 * [Minikube Main Information.](minikube-main-information.md)
 * [Minikube Commands.](minikube-commands.md)
+* [Helm Main Information.](helm-main-information.md)
+* [Helm Commands.](helm-commands.md)
 * [Kubernetes on Amazon Web Services.](kubernetes-on-aws.md)
 * [Kubernetes on Google Kubernetes Engine.](kubernetes-on-gke.md)
 * [Articles.](#articles)
