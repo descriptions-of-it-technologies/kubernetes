@@ -59,16 +59,6 @@
 
 
 
-## kubectl tools.
-* [Krew](https://krew.sigs.k8s.io/)
-* [stern]()
-* [kubectx]()
-* [kubens]()
-
-
-
-
-
 ## General. 
 
 | Key/Command                                                                                                        | Description                                                             |
@@ -216,9 +206,16 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create -f [configFile]                                                                                     |                                                                         |
-| kubectl describe replicasets [nameReplicaset]                                                                      |                                                                         |
+| kubectl replace -f [configFile]                                                                                    |                                                                         |
+| kubectl scale  --replicas=[numberOfReplicas] -f [configFile]                                                       |                                                                         |
+| kubectl scale  --replicas=[numberOfReplicas] replicaset [nameReplicaSet]                                           |                                                                         |
+| kubectl get replicaset                                                                                             |                                                                         |
+| kubectl get replicaset [nameReplicaSet]                                                                            |                                                                         |
+| kubectl edit rs [nameReplicaSet]                                                                                   |                                                                         |
+| kubectl describe replicasets [nameReplicaSet]                                                                      |                                                                         |
+| kubectl describe rs [nameReplicaSet]                                                                               |                                                                         |
 | kubectl explain replicasets                                                                                        |                                                                         |
-| kubectl delete replicasets [nameReplicaset]                                                                        |                                                                         |
+| kubectl delete replicasets [nameReplicaSet]                                                                        |                                                                         |
 | kubectl delete -f [configFile]                                                                                     |                                                                         |
 |                                                                                                                    |                                                                         |
 
