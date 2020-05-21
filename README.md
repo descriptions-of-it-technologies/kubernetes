@@ -8,6 +8,14 @@
 * [About.](#about)
 * [Documentation.](#documentation)
 * [Kubernetes Main Concepts.](#kubernetes-main-concepts)
+* [Node.](#node)
+* [Pod.](#pod)
+* [ReplicaSet.](#replicaset)
+* [Deployment.](#deployment)
+* [Namespace.](#namespace)
+* [Configmap.](#configmap)
+* [Security Contexts.](#security-contexts)
+* [Secret.](#secret)
 * [kubectl tools.](#kubectl-tools)
 * [Kubernetes Features.](#kubernetes-features)
 * [Kubernetes Commands.](kubernetes-commands.md)
@@ -86,6 +94,88 @@
 * [etcd]()
 
 
+
+
+
+## Node.
+
+
+
+
+
+## Pod.
+Edit a POD. Remember, you CANNOT edit specifications of an existing POD other than the below.
+* spec.containers[*].image
+* spec.initContainers[*].image
+* spec.activeDeadlineSeconds
+* spec.tolerations
+* For example you cannot edit the environment variables, service accounts, resource limits of a running pod. 
+
+But if you really want to, you have 2 options:
+* Run the `kubectl edit pod "pod name"` command.  This will open the pod specification in an editor (vi editor). 
+  Then edit the required properties. When you try to save it, you will be denied. This is because you are attempting 
+  to edit a field on the pod that is not editable. A copy of the file with your changes is saved in a temporary location 
+  as shown above. You can then delete the existing pod by running the command `kubectl delete pod webapp`. Then create 
+  a new pod with your changes using the temporary file `kubectl create -f new-config-of-pod.yaml`.
+* The second option is to extract the pod definition in YAML format to a file using the command `kubectl get pod webapp -o yaml > my-new-pod.yaml`
+  Then make the changes to the exported file using an editor (vi editor). Save the changes `vi my-new-pod.yaml`. 
+  Then delete the existing pod `kubectl delete pod webapp`. Then create a new pod with the edited file `kubectl create -f my-new-pod.yaml`.
+
+
+
+## ReplicaSet.
+
+
+
+
+
+## Deployment.
+* Edit Deployments. With Deployments you can easily edit any field/property of the POD template. Since the pod template 
+  is a child of the deployment specification,  with every change the deployment will automatically delete and create a 
+  new pod with the new changes. So if you are asked to edit a property of a POD part of a deployment you may do that 
+  simply by running the command `kubectl edit deployment my-deployment`.
+* IMPORTANT. `kubectl create deployment` does not have a `--replicas` option. You could first create it and then scale it using the `kubectl scale` command.
+
+
+
+
+## Namespace.
+
+
+
+
+
+## Configmap.
+
+
+
+
+
+## Secrets.
+
+
+
+
+
+## Security Contexts.
+* The User ID defined in the securityContext of the POD is carried over to all the PODs in the container.
+
+
+
+
+## Secret.
+* Remember that secrets encode data in base64 format. Anyone with the base64 encoded secret can easily decode it. As such the secrets can be considered as not very safe.
+> As in best practices like:
+>> Not checking-in secret object definition files to source code repositories.
+>> [Enabling Encryption at Rest](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/) for Secrets so they are stored encrypted in ETCD. 
+
+> Also the way kubernetes handles secrets. Such as:
+>> A secret is only sent to a node if a pod on that node requires it.
+>> Kubelet stores the secret into a tmpfs so that the secret is not written to disk storage.
+>> Once the Pod that depends on the secret is deleted, kubelet will delete its local copy of the secret data as well.
+>> Read about the [protections](https://kubernetes.io/docs/concepts/configuration/secret/#protections) and risks of using secrets [here](https://kubernetes.io/docs/concepts/configuration/secret/#risks)
+
+* Having said that, there are other better ways of handling sensitive data like passwords in Kubernetes, such as using tools like Helm Secrets, HashiCorp Vault.
 
 
 

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: back-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      command: ["sleep", "100"]
+      securityContext:
+        runAsUser: 1000
+        # Note: Capabilities are only supported at the container level and not at the POD level.
+        capabilities:
+          add: ["MAC_ADMIN"]

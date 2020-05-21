@@ -8,4 +8,9 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx
+      image: nginxf
+      ports:
+        - containerPort: 8080
+      envFrom:
+        - configMapRef:
+            name: name-of-configmap-file

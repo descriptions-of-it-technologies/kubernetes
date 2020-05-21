@@ -6,6 +6,10 @@ metadata:
     app: myapp
     type: back-end
 spec:
+  securityContext:
+    runAsUser: 1000
+    # Note: Capabilities are only supported at the container level and not at the POD level.
   containers:
     - name: nginx-container
       image: nginx
+      command: ["sleep", "100"]
