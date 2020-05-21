@@ -11,23 +11,24 @@
 * [Kubectl Kubernetes CheatSheet.](https://github.com/dennyzhang/cheatsheet-kubernetes-A4)
 * [Minikube Commands.](minikube-commands.md)
 * [kubectl tools.]()
-* [cluster](#cluster)
-* [node](#node)
-* [deployment](#deployment)
-* [pod](#pod)
-* [service](#service)
-* [replicaset](#replicaset)
-* [namespace](#namespace)
-* [daemonset](#daemonset)
-* [job](#job)
-* [cronjob](#cronjob)
-* [persistent volume](#persistent-volume)
-* [persistent volume claim](#persistent-volume-claim)
-* [secret](#secret)
-* [configmap](#configmap)
-* [context](#context)
-* [ingress](#ingress)
-* [statefulset](#statefulset)
+* [Cluster.](#cluster)
+* [Node.](#node)
+* [Pod.](#pod)
+* [Replicaset.](#replicaset)
+* [Deployment.](#deployment)
+* [Namespace.](#namespace)
+* [Context.](#context)
+* [Configmap.](#configmap)
+* [Secret.](#secret)
+* [Service.](#service)
+* [Service Account.](#service-account)
+* [Daemonset.](#daemonset)
+* [Job.](#job)
+* [Cronjob.](#cronjob)
+* [Persistent volume.](#persistentvolume)
+* [Persistent volume claim.](#persistentvolumeclaim)
+* [Ingress.](#ingress)
+* [Statefulset.](#statefulset)
 * [General.](#general)
 * [kubectl create](#kubectl-create)
 * [kubectl apply](#kubectl-apply)
@@ -153,10 +154,11 @@
  
  
  
-## ReplicaSet. rs
+## ReplicaSet.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| rs                                                                                                                   |                                                                         | 
 | kubectl create -f [configFile]                                                                                     |                                                                         |
 | kubectl replace -f [configFile]                                                                                    |                                                                         |
 | kubectl scale  --replicas=[numberOfReplicas] -f [configFile]                                                       |                                                                         |
@@ -222,12 +224,13 @@
 
 
 
-## Namespace. ns
+## Namespace.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| ns                                                                                                                 |                                                                         |
 | kubectl describe namespace                                                                                         |                                                                         |
-| kubectl create namespace [nameNamespace]                                                                          |                                                                         |
+| kubectl create namespace [nameNamespace]                                                                           |                                                                         |
 | kubectl create namespace [name] --dry-run=client -o yaml                                                           |                                                                         |
 | kubectl get namespaces                                                                                             |                                                                         |
 | kubectl get ns                                                                                                     |                                                                         |
@@ -322,10 +325,25 @@
 
 
 
-## Service. svc
+## Service Account.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl get serviceaccount                                                                                         |                                                                         |
+| kubectl get serviceaccount [name]                                                                                  |                                                                         |
+| kubectl describe serviceaccount [name]                                                                             |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## Service.
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| svc                                                                                                                |                                                                         |
 | kubectl create -f [configFile]                                                                                     | Create service by config file.                                          |
 | kubectl create service clusterip redis --tcp=6379:6379 --dry-run -o yaml                                           | This will not use the pods labels as selectors, instead it will assume selectors as app=redis. You cannot pass in selectors as an option. So it does not work very well if your pod has a different label set. So generate the file and modify the selectors before creating the service. |
 | kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run -o yaml                              |                                                                         |
@@ -390,10 +408,11 @@
 
 
 
-## PersistentVolume. pv
+## PersistentVolume.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| pv                                                                                                                 |                                                                         |
 | kubectl create -f [configFle]                                                                                      |                                                                         |
 | kubectl describe pv                                                                                                |                                                                         |
 | kubectl get pv                                                                                                     |                                                                         |
@@ -406,17 +425,17 @@
 
 
 
-## PersistentVolumeClaim. pvc
+## PersistentVolumeClaim.
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| pvc                                                                                                                |                                                                         |
 | kubectl create -f [configFle]                                                                                      |                                                                         |
 | kubectl describe pvc                                                                                               |                                                                         |
 | kubectl get pvc                                                                                                    |                                                                         |
 | kubectl get pvc --all-namespaces                                                                                   |                                                                         |
 | kubectl edit pvc                                                                                                   |                                                                         |
 | kubectl delete pvc                                                                                                 |                                                                         |
-|                                                                                                                    |                                                                         |
 |                                                                                                                    |                                                                         |
 
 

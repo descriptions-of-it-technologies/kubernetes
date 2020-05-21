@@ -16,6 +16,8 @@
 * [Configmap.](#configmap)
 * [Security Contexts.](#security-contexts)
 * [Secret.](#secret)
+* [Service Account.](#service-account)
+* [Resources](#resources)
 * [kubectl tools.](#kubectl-tools)
 * [Kubernetes Features.](#kubernetes-features)
 * [Kubernetes Commands.](kubernetes-commands.md)
@@ -158,6 +160,7 @@ But if you really want to, you have 2 options:
 
 
 ## Security Contexts.
+* If you configured it at both the POD and the CONTAINER, the settings on the CONTAINER will be override the settings on the POD.  
 * The User ID defined in the securityContext of the POD is carried over to all the PODs in the container.
 
 
@@ -176,6 +179,26 @@ But if you really want to, you have 2 options:
 >> Read about the [protections](https://kubernetes.io/docs/concepts/configuration/secret/#protections) and risks of using secrets [here](https://kubernetes.io/docs/concepts/configuration/secret/#risks)
 
 * Having said that, there are other better ways of handling sensitive data like passwords in Kubernetes, such as using tools like Helm Secrets, HashiCorp Vault.
+
+
+
+
+
+## Service Account.
+* Are two types of accounts in Kubernetes a user account and a service account.
+* The user accounts is used by humans and service account are used by machines.
+* User accounts: admin, developer, ...
+* Service account: Prometheus, Jenkins, ... 
+
+
+
+
+
+## Resources.
+* In the previous lecture, I said - "When a pod is created the containers are assigned a default CPU request of 0.5 and memory of 256Mi". 
+  For the POD to pick up those defaults you must have first set those as default values for request and limit by creating a LimitRange in that namespace.
+
+
 
 
 
