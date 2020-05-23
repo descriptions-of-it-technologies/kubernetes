@@ -19,6 +19,7 @@
 * [Service Account.](#service-account)
 * [Resources](#resources)
 * [Node Selector.](#node-selector)
+* [Taints and Tolerations.](#taints-and-tolerations)
 * [Node Affinity.](#node-affinity)
 * [kubectl tools.](#kubectl-tools)
 * [Kubernetes Features.](#kubernetes-features)

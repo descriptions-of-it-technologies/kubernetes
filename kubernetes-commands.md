@@ -116,8 +116,9 @@
 | kubectl label node [nameNode] [labelKey]-                                                                          | Remove label node.                                                      |
 | kubectl delete node [nameNode]                                                                                     |                                                                         |
 | kubectl drain [nameNode] --ignore-daemonsets                                                                       |                                                                         |
-| kubectl taint nodes [nodeName] key=[value]:[taint-effect]                                                          |                                                                         |
-| kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-                                              | Remove the taint on master.                                             |
+| kubectl taint node [nodeName] [key]=[value]:[taint-effect]                                                         |                                                                         |
+| kubectl taint node [nameNode] [key]/[value]:[taint-effect]-                                                        | Remove the taint on node.                                               |
+| kubectl taint node [nameNode] node-role.kubernetes.io/master:NoSchedule                                            | Remove the taint on master.                                             |
 |                                                                                                                    |                                                                         |
 
 `kubectl describe node kubemaster | grep Taint`
@@ -131,11 +132,11 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl describe pod [podName]                                                                                     |                                                                         |
-| kubectl run [namePod] --image=[nameImage] --restart=Never                                                          | Create Pod.                                                             |
-| kubectl run [namePod] --image=[nameImage] --restart=Never --dry-run -o yaml                                        | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
-| kubectl run [namePod] -- generator=run-pod/v1 --image=[nameDockerImage] --port=[numberPort]                        |                                                                         |
-| kubectl run [namePod] --image [nameImage] --replicas [numberOfReplicas]                                            |                                                                         |
-| kubectl run [namePod] --rm -it --image [nameImage] -- sh                                                           |                                                                         |
+| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage] --restart=Never                                   | Create Pod.                                                             |
+| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage] --restart=Never --dry-run -o yaml                 | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
+| kubectl run --generator=run-pod/v1 [namePod] -- generator=run-pod/v1 --image=[nameDockerImage] --port=[numberPort] |                                                                         |
+| kubectl run --generator=run-pod/v1 [namePod] --image [nameImage] --replicas [numberOfReplicas]                     |                                                                         |
+| kubectl run --generator=run-pod/v1 [namePod] --rm -it --image [nameImage] -- sh                                    |                                                                         |
 | kubectl logs [podName]                                                                                             | Show log of pod.                                                        |
 | kubectl get pods                                                                                                   |                                                                         |
 | kubectl get pods --namespaces=[namespace]                                                                          |                                                                         |
