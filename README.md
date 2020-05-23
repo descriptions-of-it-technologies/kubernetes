@@ -18,6 +18,8 @@
 * [Secret.](#secret)
 * [Service Account.](#service-account)
 * [Resources](#resources)
+* [Node Selector.](#node-selector)
+* [Node Affinity.](#node-affinity)
 * [kubectl tools.](#kubectl-tools)
 * [Kubernetes Features.](#kubernetes-features)
 * [Kubernetes Commands.](kubernetes-commands.md)
@@ -197,6 +199,54 @@ But if you really want to, you have 2 options:
 ## Resources.
 * In the previous lecture, I said - "When a pod is created the containers are assigned a default CPU request of 0.5 and memory of 256Mi". 
   For the POD to pick up those defaults you must have first set those as default values for request and limit by creating a LimitRange in that namespace.
+
+> * 1 CPU = 1 AWS vCPU
+> * 1 CPU = 1 GCP CORE
+> * 1 CPU = 1 Azure Core
+> * 1 CPU = 1 Hyperthread
+
+> * 1G (Gigabyte) = 1,000,000,000 bytes
+> * 1M (Megabyte) = 1,000,000 bytes
+> * 1K (Kilobyte) = 1,000 bytes
+
+> * 1Gi (Gibibyte) = 1,073,741,824 bytes
+> * 1Mi (Mebibyte) = 1,048,576 bytes
+> * 1Ki (Kibibyte) = 1,024 bytes
+
+* So what happens when you part tries to executed resources beyond its specified limit. In case of CPUS Kubernetes 
+  as throttles the CPU so that it does not go beyond the specified limit. A container cannot use more CPU resources than its limit.
+* However this is not the case with the memory a container can use more memory resources than its limit. So if a pod tries 
+  to consume more memory than its limit constantly the part will be terminated.
+* The status 'OOMKilled' indicates that the pod ran out of memory.
+* The taint effect defines what would happen to the pods if they do not tolerate the taint. 
+* There are three main effects: 
+  * NoSchedule which means the parts will not be schedule  on the node.
+  * PreferNoSchedule which means the system will try to avoid placing it pod on the node but that is not guaranteed.
+  * And third is NoExecute, which means that new pods will not be scheduled on the node and existing pods on the node, 
+    if any, will be evicted if they do not tolerate the taint. These  pods may have been scheduled on the node before 
+    taint was applied to the node.
+* While tainting the node we set to taint effect to NoExecute. And as such once the taint on the node takes effect it 
+  evicts "pod whu not have tolerance" from the node. Which simply means that the pod is killed. The "pod whu have tolerance"
+  continue to run on the node as it has a toleration to the taint.
+  
+  
+  
+  
+  
+## Node Selector.    
+* Node Limitations. Large or Medium. NOT Small.
+
+
+
+
+
+## Taints and Tolerations.
+
+
+
+
+
+## Node Affinity.
 
 
 

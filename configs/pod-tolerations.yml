@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: back-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+  tolerations:
+    # And remember all of these values need to be encoded in double quotes.
+    - key: "someValue"
+      operator: "Equal"
+      value: "someValue"
+      effect: "NoExecute"

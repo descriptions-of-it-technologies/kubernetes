@@ -84,6 +84,10 @@
 | -o yaml                                                                                                            | Output a YAML formatted API object.                                     |
 |                                                                                                                    |                                                                         |
 
+`watch kubectl get node,pod,replicaset,deployment,ns,resourcequota,limitrange,cm,secret,serviceaccount,svc,daemonset,job,cronjob,pv,pvc,ingress,statefulset,quota -o wide`
+
+
+
 
 
 ## Cluster. 
@@ -108,10 +112,15 @@
 | kubectl get nodes -l [label]                                                                                       | Get nodes whit this label.v                                             |
 | kubectl explain node                                                                                               |                                                                         |
 | kubectl edit node                                                                                                  |                                                                         |
-| kubectl label node [nodeName] [labelName]                                                                          |                                                                         |
+| kubectl label node [nodeName] [labelKey]=[labelValue]                                                              | Set label node.                                                         |
+| kubectl label node [nameNode] [labelKey]-                                                                          | Remove label node.                                                      |
 | kubectl delete node [nameNode]                                                                                     |                                                                         |
 | kubectl drain [nameNode] --ignore-daemonsets                                                                       |                                                                         |
+| kubectl taint nodes [nodeName] key=[value]:[taint-effect]                                                          |                                                                         |
+| kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-                                              | Remove the taint on master.                                             |
 |                                                                                                                    |                                                                         |
+
+`kubectl describe node kubemaster | grep Taint`
 
 
 
