@@ -30,6 +30,7 @@
 * [Ingress.](#ingress)
 * [Statefulset.](#statefulset)
 * [General.](#general)
+* [kubectl run](#kubectl-run)
 * [kubectl create](#kubectl-create)
 * [kubectl apply](#kubectl-apply)
 * [kubectl config](#kubectl-config)
@@ -65,7 +66,6 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl                                                                                                            |                                                                         |
-| kubectl -n kube-system get all                                                                                     |                                                                         |
 | kubectl events                                                                                                     | Show events.                                                            |
 | watch kubectl get all -o wide                                                                                      |                                                                         |
 | kubectl -n  kube-system get pods                                                                                   |                                                                         |
@@ -82,6 +82,7 @@
 | -o name                                                                                                            | Print only the resource name and nothing else.                          |
 | -o wide                                                                                                            | Output in the plain-text format with any additional information.        |
 | -o yaml                                                                                                            | Output a YAML formatted API object.                                     |
+| kubectl api-resources                                                                                              |                                                                         |
 |                                                                                                                    |                                                                         |
 
 `watch kubectl get node,pod,replicaset,deployment,ns,resourcequota,limitrange,cm,secret,serviceaccount,svc,daemonset,job,cronjob,pv,pvc,ingress,statefulset,quota -o wide`
@@ -109,6 +110,7 @@
 | kubectl get nodes                                                                                                  | Show all servers (nods) K8s Cluster.                                    |
 | kubectl get nodes -o wide                                                                                          |                                                                         |
 | kubectl get node [nameNode] --show-labels                                                                          |                                                                         |
+| kubectl get nodes --show-labels                                                                                    |                                                                         |
 | kubectl get nodes -l [label]                                                                                       | Get nodes whit this label.v                                             |
 | kubectl explain node                                                                                               |                                                                         |
 | kubectl edit node                                                                                                  |                                                                         |
@@ -134,9 +136,6 @@
 | kubectl describe pod [podName]                                                                                     |                                                                         |
 | kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage] --restart=Never                                   | Create Pod.                                                             |
 | kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage] --restart=Never --dry-run -o yaml                 | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
-| kubectl run --generator=run-pod/v1 [namePod] -- generator=run-pod/v1 --image=[nameDockerImage] --port=[numberPort] |                                                                         |
-| kubectl run --generator=run-pod/v1 [namePod] --image [nameImage] --replicas [numberOfReplicas]                     |                                                                         |
-| kubectl run --generator=run-pod/v1 [namePod] --rm -it --image [nameImage] -- sh                                    |                                                                         |
 | kubectl logs [podName]                                                                                             | Show log of pod.                                                        |
 | kubectl get pods                                                                                                   |                                                                         |
 | kubectl get pods --namespaces=[namespace]                                                                          |                                                                         |
@@ -245,6 +244,7 @@
 | kubectl get namespaces                                                                                             |                                                                         |
 | kubectl get ns                                                                                                     |                                                                         |
 | kubectl get all --all-namespaces                                                                                   |                                                                         |
+| kubectl -n kube-system get all                                                                                     |                                                                         |
 | kubectl explain ns                                                                                                 |                                                                         |
 | kubectl edit namespace                                                                                             |                                                                         |
 | kubectl delete namespace                                                                                           |                                                                         |
@@ -479,6 +479,22 @@
 | kubectl scale statefulset                                                                                          |                                                                         |
 | kubectl rollout status statefulset                                                                                 |                                                                         |
 |                                                                                                                    |                                                                         |
+
+
+
+
+
+## kubectl run
+
+| Key/Command                                                                                                                                                         | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| kubectl run --generator=run-pod/v1 [namePod] -- generator=run-pod/v1 --image=[nameDockerImage] --port=[numberPort]                                                  |                                                                         |
+| kubectl run --generator=run-pod/v1 [namePod] --image [nameImage] --replicas [numberOfReplicas]                                                                      |                                                                         |
+| kubectl run --generator=run-pod/v1 [namePod] --rm -it --image [nameImage] -- sh                                                                                     |                                                                         |
+| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]:[version] --limts="cpu=200m,memory=512Mi"                                                          |                                                                         |
+| kubectl run --generator=cronjob/v1beta1 [namePod] --image=[nameImage] --dry-run  --schedule="*/1 * * * *" -- /bin/sh -c "date; echo hello from kubernetes cluster"  |                                                                         |
+| kubectl run [namePod] --image=[nameImage] --replicas=[numberOfReplicas] --labels [key]=[value] --expose --port=[numberOfPort]                                       |                                                                         |
+|                                                                                                                                                                     |                                                                         |
 
 
 
