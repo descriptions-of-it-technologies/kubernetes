@@ -68,6 +68,7 @@
 | kubectl                                                                                                            |                                                                         |
 | kubectl events                                                                                                     | Show events.                                                            |
 | watch kubectl get all -o wide                                                                                      |                                                                         |
+| kubectl get all --selector [key]=[value],[key]=[value],[key]=[value]                                               |                                                                         |
 | kubectl -n  kube-system get pods                                                                                   |                                                                         |
 | kubectl --namespace kube-system get pods                                                                           |                                                                         |
 | kubectl -n kube-system get pod [namePod] -o yaml > /tmp/myPodConfig.yaml                                           |                                                                         |
@@ -84,8 +85,6 @@
 | -o yaml                                                                                                            | Output a YAML formatted API object.                                     |
 | kubectl api-resources                                                                                              |                                                                         |
 |                                                                                                                    |                                                                         |
-
-`watch kubectl get node,pod,replicaset,deployment,ns,resourcequota,limitrange,cm,secret,serviceaccount,svc,daemonset,job,cronjob,pv,pvc,ingress,statefulset,quota -o wide`
 
 
 
@@ -111,7 +110,8 @@
 | kubectl get nodes -o wide                                                                                          |                                                                         |
 | kubectl get node [nameNode] --show-labels                                                                          |                                                                         |
 | kubectl get nodes --show-labels                                                                                    |                                                                         |
-| kubectl get nodes -l [label]                                                                                       | Get nodes whit this label.v                                             |
+| kubectl get nodes -l [key]=[value]                                                                                 | Get nodes whit this label.v                                             |
+| kubectl get nodes -l [key]=[value]                                                                                 | Get nodes whit this label.v                                             |
 | kubectl explain node                                                                                               |                                                                         |
 | kubectl edit node                                                                                                  |                                                                         |
 | kubectl label node [nodeName] [labelKey]=[labelValue]                                                              | Set label node.                                                         |
@@ -140,7 +140,11 @@
 | kubectl get pods                                                                                                   |                                                                         |
 | kubectl get pods --namespaces=[namespace]                                                                          |                                                                         |
 | kubectl get pods --all-namespaces                                                                                  |                                                                         |
-| kubectl get pods -l [labelName]                                                                                    | Get pods by label name.                                                 |
+| kubectl get pods --selector [key]=[value]                                                                          |                                                                         |
+| kubectl get pod -l [keyLabel]                                                                                      | Get pods by label name.                                                 |
+| kubectl get pods -l '![keyValue]'                                                                                  | To list all pods those that don’t have the 'keyValue' label.            |
+| kubectl get pod -L [keyLabel],[keyLabel]                                                                           |                                                                         |
+| kubectl get pod [namePod] --show-labels                                                                            |                                                                         |
 | kubectl explain pods                                                                                               |                                                                         |
 | kubectl edit pods                                                                                                  |                                                                         |
 | kubectl edit pods [namePod]                                                                                        |                                                                         |
@@ -151,9 +155,13 @@
 | kubectl exec -it [namePod] -c [containerName] -- [command]                                                         |                                                                         |
 | kubectl exec [namePod] whoami                                                                                      |                                                                         |
 | kubectl exec -it [namePod] -- date -s '19 APR 2012 11:14:00'                                                       |                                                                         |
+| kubectl exec -it [namePod] cat /log/app.log                                                                        |                                                                         |
 | kubectl expose pod [namePod] --port=[numberOfPort] --name [nameService] --dry-run -o yaml                          | Create a Service of type ClusterIP to expose pod on port.               |
+| kubectl label pod [podName] [key]=[value]                                                                          | Attach label.                                                           |
+| kubectl label pod [podName] [key]=[value] --overwrite                                                              |                                                                         |
+| kubectl label pod [podName] [key]-                                                                                 | Delete label.                                                           |
 | kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                              |                                                                         | 
-| kubectl port-forward [podName] [localMachinePort]:[containerPort]                                                  |                                                                         | 
+| kubectl port-forward [podName] [localMachinePort]:[podPort]                                                        |                                                                         | 
 | kubectl delete pod [podName]                                                                                       |                                                                         |
 | kubectl delete pods --all                                                                                          |                                                                         |
 | kubectl delete -f [configFile]                                                                                     |                                                                         |
@@ -193,18 +201,23 @@
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create deployment [deploymentName] --image=[imageName:version]                                             |                                                                         |
 | kubectl create -f [configFile]                                                                                     | Create deployment by config file.                                       |
+| kubectl create -f [configFile] --record                                                                            |                                                                         |
 | kubectl create deployment --image=[nameImage] [nameDeployment]                                                     | Create a deployment.                                                    |
 | kubectl create -f [configFile] --namespace=[name]                                                                  |                                                                         |
 | kubectl create deployment --image=[nameImage] [nameDeployment] --dry-run -o yaml                                   | Generate Deployment YAML file (-o yaml). Don't create it(--dry-run)     |
 | kubectl create deployment --image=[nameImage] [nameDeployment] --dry-run -o yaml > [fileName].yaml                 | Save it to a file - (If you need to modify or add some other details)   |
 | kubectl apply -f [configFile]                                                                                      | Update deployment by config file.                                       |
-| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage]                                        | Update deployment by kubectl command.                                   |
+| kubectl edit deployment [deploymentName]                                                                           |                                                                         |
+| kubectl edit deployment [deploymentName] --record                                                                  |                                                                         |
+| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage]                                        | Update image of deployment by kubectl command. But not be updated image in config file.                                   |
 | kubectl set image deployment [deploymentName] [imageName]=[newVersionImage] --record                               |                                                                         |
+| kubectl describe deployment [deploymentName]                                                                       |                                                                         |
+| kubectl describe deployment [deploymentName] --revision=[numberRevision]                                           |                                                                         |
 | kubectl rollout pause deployment [deploymentName]                                                                  | Pause updating deployment.                                              |
 | kubectl rollout resume deployment [deploymentName]                                                                 | Resume updating deployment.                                             |
 | kubectl rollout status deployment [deploymentName]                                                                 |                                                                         |
 | kubectl rollout history deployment [deploymentName]                                                                |                                                                         |
-| kubectl rollout history deployment [deploymentName] --revision [numberRevision]                                    |                                                                         |
+| kubectl rollout history deployment [deploymentName] --revision=[numberRevision]                                    |                                                                         |
 | kubectl rollout undo deployment [deploymentName]                                                                   | Rollout to previous version.                                            |
 | kubectl rollout undo deployment [deploymentName] --to-revision=[revisionNumber]                                    | Rollout to specific number of revision.                                 |
 | kubectl annotate deployment [deploymentName] kubernetes.io/change-cause="Update message..."                        |                                                                         |
@@ -216,7 +229,6 @@
 | kubectl explain deployment                                                                                         |                                                                         |
 | kubectl scale deployment                                                                                           |                                                                         |
 | kubectl scale deploy [nameDeployment] --replicas [numberOfReplicas]                                                |                                                                         |
-| kubectl edit deployment                                                                                            |                                                                         |
 | kubectl port-forward deployment/[deploymentName] [localMachinePort]:[containerPort]                                |                                                                         |
 | kubectl expose deployment [nameDeployment] --type NodePort --port [numberOfPort]                                   |                                                                         |
 | kubectl expose deployment [nameDep] --target-port=[port] --port [port] --type=LoadBalancer --namespace=[namespace] |                                                                         |
@@ -340,9 +352,32 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl create serviceaccount [nameServiceAccount] --namespace [namespace]                                         |                                                                         |
 | kubectl get serviceaccount                                                                                         |                                                                         |
 | kubectl get serviceaccount [name]                                                                                  |                                                                         |
 | kubectl describe serviceaccount [name]                                                                             |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## Roles.
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl get roles --namespace [namespace]                                                                          |                                                                         |
+|                                                                                                                    |                                                                         |
+
+
+
+
+
+## Role Bindings.
+
+| Key/Command                                                                                                        | Description                                                             |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| kubectl get rolebindings --namespace [namespace]                                                                   |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
@@ -361,7 +396,6 @@
 | kubectl get svc                                                                                                    |                                                                         |
 | kubectl get svc --all-namespaces                                                                                   |                                                                         |
 | kubectl get svc [nameDeploy] -o yaml > [toFile]                                                                    | Get configuration of service. Example to file - /tmp/svc-conf.yaml      |
-| kubectl get svc --all-namespaces                                                                                   |                                                                         |
 | kubectl explain svc                                                                                                |                                                                         |
 | kubectl edit svc                                                                                                   |                                                                         |
 | kubectl port-forward service/[serviceName] [localMachinePort]:[containerPort]                                      |                                                                         |
@@ -395,6 +429,7 @@
 | kubectl create -f [configFile]                                                                                     |                                                                         |
 | kubectl describe job [nameJob]                                                                                     |                                                                         |
 | kubectl get job --all-namespaces                                                                                   |                                                                         |
+| kubectl get jobs                                                                                                   |                                                                         |
 | kubectl delete job [nameJob]                                                                                       |                                                                         |
 | kubectl delete -f [configFile]                                                                                     |                                                                         |
 |                                                                                                                    |                                                                         |
@@ -457,6 +492,7 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl describe ingress                                                                                           |                                                                         |
+| kubectl create -f [nameConfig]                                                                                     |                                                                         |
 | kubectl get ingress                                                                                                |                                                                         |
 | kubectl get ingress --all-namespaces                                                                               |                                                                         |
 | kubectl edit ingress                                                                                               |                                                                         |
@@ -488,7 +524,7 @@
 
 | Key/Command                                                                                                                                                         | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| kubectl run --generator=run-pod/v1 [namePod] -- generator=run-pod/v1 --image=[nameDockerImage] --port=[numberPort]                                                  |                                                                         |
+| kubectl run --generator=run-pod/v1 [namePod] --image=[nameDockerImage] --port=[numberPort]                                                  |                                                                         |
 | kubectl run --generator=run-pod/v1 [namePod] --image [nameImage] --replicas [numberOfReplicas]                                                                      |                                                                         |
 | kubectl run --generator=run-pod/v1 [namePod] --rm -it --image [nameImage] -- sh                                                                                     |                                                                         |
 | kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]:[version] --limts="cpu=200m,memory=512Mi"                                                          |                                                                         |
@@ -612,17 +648,18 @@
 
 ## kubectl logs
 
-| Key/Command                                | Description                                                             |
-| ------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl logs                               |                                                                         |
-| kubectl logs --since 1h                    |                                                                         |
-| kubectl logs --since 1m                    |                                                                         |
-| kubectl logs --since 1s                    |                                                                         |
-| kubectl logs -f                            |                                                                         |
-| kubectl logs --since 1h -f                 |                                                                         |
-| kubectl logs --since 1m -f                 |                                                                         |
-| kubectl logs --since 1s -f                 |                                                                         |
-|                                            |                                                                         |
+| Key/Command                                                                           | Description                                                             |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| kubectl logs [podName]                                                                |                                                                         |
+| kubectl logs -f [configFile] [containerName]                                          |                                                                         |
+| kubectl logs --since 1h                                                               |                                                                         |
+| kubectl logs --since 1m                                                               |                                                                         |
+| kubectl logs --since 1s                                                               |                                                                         |
+| kubectl logs --since 1h -f [configFile]                                               |                                                                         |
+| kubectl logs --since 1m -f [configFile]                                               |                                                                         |
+| kubectl logs --since 1s -f [configFile]                                               |                                                                         |
+| kubectl logs [podName] -c [containerName]                                             |                                                                         |
+|                                                                                       |                                                                         |
 
 
 
@@ -646,6 +683,18 @@
 | kubectl rollout history                    |                                                                         |
 | kubectl rollout undo                       |                                                                         |
 |                                            |                                                                         |
+
+
+
+
+
+## kubectl top
+
+| Key/Command                                                                           | Description                                                             |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| kubectl top node                                                                      |                                                                         |
+| kubectl top pod                                                                       |                                                                         |
+|                                                                                       |                                                                         |
 
 
 

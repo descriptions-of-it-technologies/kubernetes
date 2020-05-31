@@ -126,6 +126,11 @@ But if you really want to, you have 2 options:
   Then make the changes to the exported file using an editor (vi editor). Save the changes `vi my-new-pod.yaml`. 
   Then delete the existing pod `kubectl delete pod webapp`. Then create a new pod with the edited file `kubectl create -f my-new-pod.yaml`.
 
+* When a pod is deleted, its logs are also deleted.  To make a pod’s logs available even after the pod is deleted, you 
+  need to set up centralized, cluster-wide logging, which stores all the logs into a central store. 
+
+
+
 
 
 ## ReplicaSet.
@@ -150,13 +155,20 @@ But if you really want to, you have 2 options:
 
 
 
+## Service.
+* NodePort can only be in a valid range which by default is from 30000 to 32767.
+
+
+
+
+
+## Ingress.
+
+
+
+
+
 ## Configmap.
-
-
-
-
-
-## Secrets.
 
 
 
@@ -248,6 +260,59 @@ But if you really want to, you have 2 options:
 
 
 ## Node Affinity.
+
+
+
+
+
+## Multi-Container Pods.
+* Ambassador.
+* Adapter.
+* Sidecar.
+
+
+
+
+
+## Readiness Probe.
+POD Status.
+* Pending.
+* ContainerCreating.
+* Running.
+
+POD Conditions.
+* PodScheduled.
+* Initialized.
+* ContainersReady.
+* Ready.
+
+
+
+
+## Liveness Probe.
+When the application crashes, the container is restarted. During this period the service directs users to the available POD, since the POD status is not READY.
+
+
+
+
+
+## Rolling Updates & Rollbacks Deployments.
+Deployment Strategy.
+* Recreate.
+* Rolling Update. (Default Deployment Strategy.)
+
+
+
+
+## Job.
+* If tasks complete successfully the return code is zero
+* By the default the job are created one after the other. The secibd job is crated only after the first is finished.
+
+
+
+
+
+## Cron Job.
 
 
 
@@ -391,6 +456,10 @@ But if you really want to, you have 2 options:
 ## Metrics and Alerting.
 * [Prometheus.](https://prometheus.io/)
 * [Grafana.](https://grafana.com/)
+* [Elastic Stack]()
+* [DataDog]()
+* [Dynatrace]()
+`https://github.com/kodekloudhub/kubernetes-metrics-server.git`
 
 
 

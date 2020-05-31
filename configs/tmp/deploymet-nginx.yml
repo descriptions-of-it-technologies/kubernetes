@@ -1,24 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-deployment
+  name: nginx-d
   labels:
-    app: myapp
-    tier: back-end
+    app: nginx-app
+    type: back-end
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
-        app: myapp
-        tier: back-end
+        app: nginx-app
+        type: back-end
     spec:
       containers:
-        - name: nginx-container
+        - name: nginx-c
           image: nginx
+          imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 80
   selector:
     matchLabels:
-      app: myapp
-      tier: back-end
+      app: nginx-app
+      type: back-end

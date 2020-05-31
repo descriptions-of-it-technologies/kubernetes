@@ -3,16 +3,15 @@
 # ======================================================================================================================
 # ================================================================================================================ General
 # ======================================================================================================================
-alias k="kubectl"
-alias wkg="watch kubectl get nodes,pods,replicasets,deployments,namespaces,resourcequotas,limitranges,configmaps,secrets,serviceaccounts,services,daemonsets,jobs,cronjobs,persistentvolumes,persistentvolumeclaims,ingress,statefulsets,quota -o wide"
-
+alias k="       kubectl"
+alias c="clear"
 
 
 # ======================================================================================================================
 # ================================================================================================================ Apply
 # ======================================================================================================================
-alias ka="kubectl apply"
-alias kaf="kubectl apply -f"
+alias ka="      kubectl apply"
+alias kaf="     kubectl apply -f"
 
 
 
@@ -26,21 +25,29 @@ alias kaf="kubectl apply -f"
 # ======================================================================================================================
 # ================================================================================================================ Create
 # ======================================================================================================================
-alias kcf="kubectl create -f"
+alias kc="      kubectl create"
+
+alias kcf="     kubectl create -f"
+
+alias kcns="    kubectl create namespace"
+
+alias kccm="    kubectl create configmap"
+
+alias kcsa="    kubectl create serviceaccount"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Config
 # ======================================================================================================================
-alias kconf="kubectl config"
+alias kconf="   kubectl config"
 
-alias kconfcc="kubectl config current-context"
-alias kconfdc="kubectl config delete-context"
-alias kconfgc="kubectl config get-contexts"
-alias kconfn="kubectl config set-context $(kubectl config current-context) --namespace"
-alias kconfsc="kubectl config set-context"
-alias kconfuc="kubectl config use-context"
+alias kconfcc=" kubectl config current-context"
+alias kconfdc=" kubectl config delete-context"
+alias kconfgc=" kubectl config get-contexts"
+alias kconfn="  kubectl config set-context $(kubectl config current-context) --namespace"
+alias kconfsc=" kubectl config set-context"
+alias kconfuc=" kubectl config use-context"
 
 
 
@@ -54,183 +61,229 @@ alias kconfuc="kubectl config use-context"
 # ======================================================================================================================
 # ================================================================================================================ Cluster-info
 # ======================================================================================================================
-
+alias kci="     kubectl cluster-info"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Describe
 # ======================================================================================================================
-alias kd="kubectl describe"
+alias kd="      kubectl describe"
 
-alias kdn="kubectl describe node"
-alias kdp="kubectl describe pods"
-alias kdrs="kubectl describe replicaset"
-alias kdd="kubectl describe deployment"
-alias kdns="kubectl describe namespace"
-alias kdsec="kubectl describe secret"
-alias kds="kubectl describe svc"
-alias kdcm="kubectl describe configmap"
-alias kdi="kubectl describe ingress"
-alias kdss="kubectl describe statefulset"
-alias kdpvc="kubectl describe pvc"
+alias kdn="     kubectl describe node"
+
+alias kdp="     kubectl describe pods"
+
+alias kdrs="    kubectl describe replicaset"
+
+alias kdd="     kubectl describe deployment"
+
+alias kdns="    kubectl describe namespace"
+
+alias kdsec="   kubectl describe secret"
+
+alias kdsvc="   kubectl describe service"
+
+alias kdcm="    kubectl describe configmap"
+
+alias kdss="    kubectl describe statefulset"
+
+alias kdpvc="   kubectl describe pvc"
+
+alias kdi="     kubectl describe ingress"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Delete
 # ======================================================================================================================
-alias kdel="kubectl delete"
-alias kdelf="kubectl delete -f"
+alias kdel="    kubectl delete"
+alias kdelf="   kubectl delete -f"
 
-alias kdeln="kubectl delete node"
+alias kdeln="   kubectl delete node"
 
-alias kdelp="kubectl delete pods"
+alias kdelp="   kubectl delete pods"
 
-alias kdelrs="kubectl delete replicaset"
+alias kdelrs="  kubectl delete replicaset"
 
-alias kdeld="kubectl delete deployment"
+alias kdeld="   kubectl delete deployment"
 
-alias kdelns="kubectl delete namespace"
+alias kdelns="  kubectl delete namespace"
 
-alias kdels="kubectl delete service"
+alias kdelsvc=" kubectl delete service"
 
-alias kdelcm="kubectl delete configmap"
+alias kdelcm="  kubectl delete configmap"
 
-alias kdelsec="kubectl delete secret"
+alias kdelsec=" kubectl delete secret"
 
-alias kdelpvc="kubectl delete persistentvolumeclaim"
+alias kdelpvc=" kubectl delete persistentvolumeclaim"
 
-alias kdeli="kubectl delete ingress"
+alias kdeli="   kubectl delete ingress"
 
-alias kdelss="kubectl delete statefulset"
+alias kdelss="  kubectl delete statefulset"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Edit
 # ======================================================================================================================
-alias ke="kubectl edit"
+alias ke="      kubectl edit"
 
-alias ken="kubectl edit node"
+alias ken="     kubectl edit node"
 
-alias kep="kubectl edit pods"
+alias kep="     kubectl edit pods"
 
-alias kers="kubectl edit replicaset"
+alias kers="    kubectl edit replicaset"
 
-alias ked="kubectl edit deployment"
+alias ked="     kubectl edit deployment"
 
-alias kens="kubectl edit namespace"
+alias kens="    kubectl edit namespace"
 
-alias kepvc="kubectl edit persistentvolumeclaim"
+alias kepvc="   kubectl edit persistentvolumeclaim"
 
-alias kei="kubectl edit ingress"
+alias kei="     kubectl edit ingress"
 
-alias kes="kubectl edit service"
+alias kesvc="   kubectl edit service"
 
-alias kecm="kubectl edit configmap"
+alias kecm="    kubectl edit configmap"
 
-alias kess="kubectl edit statefulset"
+alias kess="    kubectl edit statefulset"
+
+
+
+# ======================================================================================================================
+# ================================================================================================================ Explain
+# ======================================================================================================================
+alias kex="     kubectl explain"
+
+alias kexn="    kubectl explain node.spec"
+
+alias kexp="    kubectl explain pod.spec"
+
+alias kexrs="   kubectl explain replicaset.spec"
+
+alias kexd="    kubectl explain deployment.spec"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Get
 # ======================================================================================================================
-alias kg="kubectl get"
+alias kg='      kubectl get'
 
-alias kgaa="kubectl get all --all-namespaces"
+alias kga="     kubectl get all -o wide"
+alias kgan="    kubectl get all -o wide --namespace"
+alias kgaan="   kubectl get all -o wide --all-namespaces"
 
-alias kgn="kubectl get nodes"
+alias kgw="     kubectl get nodes,pods,replicasets,deployments,namespaces,resourcequotas,limitranges,configmaps,secrets,serviceaccounts,services,daemonsets,jobs,cronjobs,persistentvolumes,persistentvolumeclaims,ingress,statefulsets,quota -o wide watch"
+alias kgwan="   kubectl get nodes,pods,replicasets,deployments,namespaces,resourcequotas,limitranges,configmaps,secrets,serviceaccounts,services,daemonsets,jobs,cronjobs,persistentvolumes,persistentvolumeclaims,ingress,statefulsets,quota -o wide watch --all-namespaces"
 
-alias kgp="kubectl get pods"
-alias kgpa="kubectl get pods --all-namespaces"
-alias kgpwide="kubectl get pods -o wide"
-alias kgpw="kubectl get pods --watch"
+alias kgn="     kubectl get nodes -o wide "
 
-alias kgrs="kubectl get replicaset"
+alias kgns="    kubectl get namespace -o wide"
 
-alias kgd="kubectl get deployment"
-alias kgda="kubectl get deployment --all-namespaces"
-alias kgdw="kubectl get deployment --watch"
-alias kgdwide="kubectl get deployment -o wide"
+alias kgp='     kubectl get pods -o wide'
+alias kgpn='    kubectl get pods -o wide --namespace'
+alias kgpan="   kubectl get pods -o wide --all-namespaces"
+alias kgpw="    kubectl get pods -o wide --watch"
 
-alias kgnearc="kubectl get namespaces"
+alias kgrs="    kubectl get replicasets -o wide"
+alias kgrsn="   kubectl get replicasets -o wide --namespace"
+alias kgrsan="  kubectl get replicasets -o wide --all-namespaces"
+alias kgrsw="   kubectl get replicasets -o wide --watch"
 
-alias kgs="kubectl get service"
-alias kgsa="kubectl get service --all-namespaces"
-alias kgswide="kubectl get service -o wide"
-alias kgsw="kubectl get service --watch"
+alias kgd="     kubectl get deployments -o wide"
+alias kgdn="    kubectl get deployments -o wide --namespace"
+alias kgdan="   kubectl get deployments -o wide --all-namespaces"
+alias kgdw="    kubectl get deployments -o wide --watch"
 
+alias kgsvc="   kubectl get service -o wide"
+alias kgsvcn="  kubectl get service -o wide --namespace"
+alias kgsvcan=" kubectl get service -o wide --all-namespaces"
+alias kgsvcw="  kubectl get service -o wide --watch"
 
-alias kgcm="kubectl get configmaps"
-alias kgcma="kubectl get configmaps --all-namespaces"
+alias kgcm="    kubectl get configmaps -o wide"
+alias kgcmn="   kubectl get configmaps -o wide --namespace"
+alias kgcman="  kubectl get configmaps -o wide --all-namespaces"
+alias kgcmw="   kubectl get configmaps -o wide --watch"
 
-alias kgsec="kubectl get secret"
-alias kgseca="kubectl get secret --all-namespaces"
+alias kgsec="   kubectl get secret -o wide"
+alias kgsecn="  kubectl get secret -o wide --namespace"
+alias kgsecan=" kubectl get secret -o wide --all-namespaces"
+alias kgsecw="  kubectl get secret -o wide --watch"
 
-alias kgpvc="kubectl get persistentvolumeclaims"
-alias kgpvca="kubectl get persistentvolumeclaims --all-namespaces"
-alias kgpvcw="kubectl get persistentvolumeclaims --watch"
+alias kgpvc="   kubectl get persistentvolumeclaims -o wide"
+alias kgpvcn="  kubectl get persistentvolumeclaims -o wide --namespace"
+alias kgpvcan=" kubectl get persistentvolumeclaims -o wide --all-namespaces"
+alias kgpvcw="  kubectl get persistentvolumeclaims -o wide --watch"
 
-alias kgi="kubectl get ingress"
-alias kgia="kubectl get ingress --all-namespaces"
+alias kgi="     kubectl get ingress -o wide"
+alias kgin="    kubectl get ingress -o wide --namespace"
+alias kgian="   kubectl get ingress -o wide --all-namespaces"
+alias kgiw="    kubectl get ingress -o wide --watch"
 
-alias kgss="kubectl get statefulset"
-alias kgssa="kubectl get statefulset --all-namespaces"
-alias kgsswide="kubectl get statefulset -o wide"
-alias kgssw="kubectl get statefulset --watch"
+alias kgss="    kubectl get statefulset -o wide"
+alias kgssn="   kubectl get statefulset -o wide --namespace"
+alias kgssan="  kubectl get statefulset -o wide --all-namespaces"
+alias kgssw="   kubectl get statefulset -o wide --watch"
+
+alias kgsa="    kubectl get serviceaccount -o wide"
+alias kgsan="   kubectl get serviceaccount -o wide --namespace"
+alias kgsaan="  kubectl get serviceaccount -o wide --all-namespaces"
+alias kgsaw="   kubectl get serviceaccount -o wide --watch"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Log
 # ======================================================================================================================
-alias kl="kubectl logs"
-alias klf="kubectl logs -f"
+alias kl="      kubectl logs"
+alias klf="     kubectl logs -f"
 
-alias kl1h="kubectl logs --since 1h"
-alias kl1m="kubectl logs --since 1m"
-alias kl1s="kubectl logs --since 1s"
-alias klf1h="kubectl logs --since 1h -f"
-alias klf1m="kubectl logs --since 1m -f"
-alias klf1s="kubectl logs --since 1s -f"
+alias kl1h="    kubectl logs --since 1h"
+alias kl1m="    kubectl logs --since 1m"
+alias kl1s="    kubectl logs --since 1s"
+alias klf1h="   kubectl logs --since 1h -f"
+alias klf1m="   kubectl logs --since 1m -f"
+alias klf1s="   kubectl logs --since 1s -f"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Port-Forward
 # ======================================================================================================================
-alias kpf="kubectl port-forward"
+alias kpf="     kubectl port-forward"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Rollout
 # ======================================================================================================================
-alias krl="kubectl rollout"
+alias krl="     kubectl rollout"
 
-alias krlsd="kubectl rollout status deployment"
+alias krls="    kubectl rollout status"
+alias krlsd="   kubectl rollout status deployment"
+alias krlsss="  kubectl rollout status statefulset"
 
-alias krlsss="kubectl rollout status statefulset"
+alias krlh="    kubectl rollout history"
+alias krlhd="   kubectl rollout history deployment"
 
-alias krlh="kubectl rollout history"
-
-alias krlu="kubectl rollout undo"
+alias krlu="    kubectl rollout undo"
+alias krlud="   kubectl rollout undo deployment"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Run
 # ======================================================================================================================
-alias kr="kubectl run"
+alias kr="      kubectl run"
 
 
 
 # ======================================================================================================================
 # ================================================================================================================ Scale
 # ======================================================================================================================
-alias ks="kubectl scale"
+alias ks="      kubectl scale"
 
-alias ksd="kubectl scale deployment"
-alias ksss="kubectl scale statefulset"
+alias ksd="     kubectl scale deployment"
+alias ksss="    kubectl scale statefulset"

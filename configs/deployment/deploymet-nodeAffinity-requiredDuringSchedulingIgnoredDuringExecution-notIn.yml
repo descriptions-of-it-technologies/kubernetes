@@ -7,12 +7,10 @@ metadata:
     tier: back-end
 spec:
   replicas: 3
-  selector:
-    matchLabels:
-      tier: back-end
   template:
     metadata:
       labels:
+        app: myapp
         tier: back-end
     spec:
       containers:
@@ -29,3 +27,7 @@ spec:
                     operator: NotIn
                     values:
                       - kind-worker2
+  selector:
+    matchLabels:
+      app: myapp
+      tier: back-end
