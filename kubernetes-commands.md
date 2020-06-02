@@ -9,7 +9,7 @@
 * [Documentation.](#documentation)
 * [kubectl Cheat Sheet. Official.](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 * [Kubectl Kubernetes CheatSheet.](https://github.com/dennyzhang/cheatsheet-kubernetes-A4)
-* [Minikube Commands.](minikube-commands.md)
+* [Minikube Commands.](../minikube-main-information/minikube-commands.md)
 * [kubectl tools.]()
 * [Cluster.](#cluster)
 * [Node.](#node)
