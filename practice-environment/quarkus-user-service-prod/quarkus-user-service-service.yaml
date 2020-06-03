@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: quarkus-user-service
+  namespace: prod
+  labels:
+    name: quarkus-user-service
+    type: back-end
+    app: quarkus-user-service
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 8080
+      port: 8080
+      nodePort: 30601
+  selector:
+    name: quarkus-user-service
+    type: back-end
+    app: quarkus-user-service

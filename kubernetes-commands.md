@@ -146,7 +146,11 @@
 | kubectl get pod -l [keyLabel]                                                                                      | Get pods by label name.                                                 |
 | kubectl get pods -l '![keyValue]'                                                                                  | To list all pods those that don’t have the 'keyValue' label.            |
 | kubectl get pod -L [keyLabel],[keyLabel]                                                                           |                                                                         |
+| kubectl get pods --show-labels                                                                                     |                                                                         |
 | kubectl get pod [namePod] --show-labels                                                                            |                                                                         |
+| kubectl get pod [namePod] -o yaml                                                                                  |                                                                         |
+| kubectl get pod [namePod] -o yaml > [nameFile].yaml                                                                |                                                                         |
+| kubectl get pod [namePod] -o json                                                                                  |                                                                         |
 | kubectl explain pods                                                                                               |                                                                         |
 | kubectl edit pods                                                                                                  |                                                                         |
 | kubectl edit pods [namePod]                                                                                        |                                                                         |
@@ -164,6 +168,8 @@
 | kubectl label pod [podName] [key]-                                                                                 | Delete label.                                                           |
 | kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                              |                                                                         | 
 | kubectl port-forward [podName] [localMachinePort]:[podPort]                                                        |                                                                         | 
+| kubectl logs [namePod]                                                                                             |                                                                         |
+| kubectl logs [namePod] -c [containerName]                                                                          |                                                                         |
 | kubectl delete pod [podName]                                                                                       |                                                                         |
 | kubectl delete pods --all                                                                                          |                                                                         |
 | kubectl delete -f [configFile]                                                                                     |                                                                         |
@@ -177,13 +183,15 @@
 
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| rs                                                                                                                   |                                                                         | 
+| rs                                                                                                                 |                                                                         | 
 | kubectl create -f [configFile]                                                                                     |                                                                         |
 | kubectl replace -f [configFile]                                                                                    |                                                                         |
 | kubectl scale  --replicas=[numberOfReplicas] -f [configFile]                                                       |                                                                         |
 | kubectl scale  --replicas=[numberOfReplicas] replicaset [nameReplicaSet]                                           |                                                                         |
 | kubectl get replicaset                                                                                             |                                                                         |
 | kubectl get replicaset [nameReplicaSet]                                                                            |                                                                         |
+| kubectl get replicaset [nameReplicaSet] -o yaml                                                                    |                                                                         |
+| kubectl get replicaset [nameReplicaSet] -o json                                                                    |                                                                         |
 | kubectl get rs --all-namespaces                                                                                    |                                                                         |
 | kubectl edit rs [nameReplicaSet]                                                                                   |                                                                         |
 | kubectl describe replicasets [nameReplicaSet]                                                                      |                                                                         |
@@ -226,6 +234,8 @@
 | kubectl describe deployment                                                                                        |                                                                         |
 | kubectl get deployment                                                                                             |                                                                         |
 | kubectl get deployment --all-namespaces                                                                            |                                                                         |
+| kubectl get deploy [nameDeploy] -o yaml                                                                            |                                                                         |
+| kubectl get deploy [nameDeploy] -o json                                                                            |                                                                         |
 | kubectl get deploy [nameDeploy] -o yaml > [toFile]                                                                 | Get configuration of deployment. Example to file - /tmp/deployment.yaml |
 | kubectl get deployment --all-namespaces                                                                            |                                                                         |
 | kubectl explain deployment                                                                                         |                                                                         |

@@ -1,0 +1,16 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: postgres-db
+  namespace: prod
+  labels:
+    name: postgres-db
+    type: back-end
+    app: quarkus-user-service
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi

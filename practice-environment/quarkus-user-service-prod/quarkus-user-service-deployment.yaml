@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quarkus-user-service
+  namespace: prod
+  labels:
+    name: quarkus-user-service
+    type: back-end
+    app: quarkus-user-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: quarkus-user-service
+        type: back-end
+        app: quarkus-user-service
+    spec:
+      containers:
+        - name: quarkus-user-service-container
+          image: trlofficial/quarkus-user-service
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8080
+  selector:
+    matchLabels:
+      name: quarkus-user-service
+      type: back-end
+      app: quarkus-user-service

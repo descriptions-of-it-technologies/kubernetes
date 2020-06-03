@@ -7,7 +7,7 @@
 ## Contents at a Glance.
 * [About.](#about)
 * [Documentation.](#documentation)
-* [Script to Certification.](create-alias.sh)
+* [Script to Certification.](../kubectl-alias.sh)
 * [Help.](#help)
 
 
