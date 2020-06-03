@@ -13,3 +13,10 @@ kubectl create -f /home/trl/IdeaProjects/Programming-Training-And-Practice/kuber
 
 echo "================================================================================================================== Creating namespace ..."
 kubectl create -f /home/trl/IdeaProjects/Programming-Training-And-Practice/kubernetes-main-information/practice-environment/namespace-test.yaml
+
+# =====================================================================================================================================================================================================
+# ===================================================================================== Creation Namespace DEV =======================================================================================
+# =====================================================================================================================================================================================================
+
+echo "================================================================================================================== Creating namespace ..."
+kubectl create -f /home/trl/IdeaProjects/Programming-Training-And-Practice/kubernetes-main-information/practice-environment/namespace-dev.yaml
