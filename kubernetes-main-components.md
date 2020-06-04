@@ -116,7 +116,9 @@ But if you really want to, you have 2 options:
 
 
 ## Ingress.
-
+* Ingress Controller (not deployed by default).
+* Ingress Resources.
+* Ingress Controllers: GCP HTTP(S) Load Balancer(GCE), Nginx, Contour, Haproxy, trafik, Istio.
 
 
 

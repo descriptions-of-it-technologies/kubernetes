@@ -5,18 +5,18 @@
 # =====================================================================================================================================================================================================
 
 echo "================================================================================================================== Creating namespace ..."
-kubectl create -f /home/trl/IdeaProjects/Programming-Training-And-Practice/kubernetes-main-information/practice-environment/namespace-prod.yaml
+kubectl create -f /home/trl/IdeaProjects/Programming-Training-And-Practice/kubernetes-main-information/practice-environment/namespaces/namespace-prod.yaml
 
 # =====================================================================================================================================================================================================
 # ===================================================================================== Creation Namespace TEST =======================================================================================
 # =====================================================================================================================================================================================================
 
 echo "================================================================================================================== Creating namespace ..."
-kubectl create -f /home/trl/IdeaProjects/Programming-Training-And-Practice/kubernetes-main-information/practice-environment/namespace-test.yaml
+kubectl create -f /home/trl/IdeaProjects/Programming-Training-And-Practice/kubernetes-main-information/practice-environment/namespaces/namespace-test.yaml
 
 # =====================================================================================================================================================================================================
-# ===================================================================================== Creation Namespace DEV =======================================================================================
+# ===================================================================================== Creation Namespace DEV ========================================================================================
 # =====================================================================================================================================================================================================
 
 echo "================================================================================================================== Creating namespace ..."
-kubectl create -f /home/trl/IdeaProjects/Programming-Training-And-Practice/kubernetes-main-information/practice-environment/namespace-dev.yaml
+kubectl create -f /home/trl/IdeaProjects/Programming-Training-And-Practice/kubernetes-main-information/practice-environment/namespaces/namespace-dev.yaml

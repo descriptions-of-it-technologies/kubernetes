@@ -26,18 +26,28 @@ spec:
             httpGet:
               path: /health/ready
               port: 8080
+              scheme: HTTP
             initialDelaySeconds: 10
-            periodSeconds: 5
-            failureThreshold: 8
+            periodSeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 3
           livenessProbe:
             httpGet:
               path: /health/live
               port: 8080
+              scheme: HTTP
             initialDelaySeconds: 10
-            periodSeconds: 5
-            failureThreshold: 8
+            periodSeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 3
   selector:
     matchLabels:
       name: quarkus-user-service
       type: back-end
       app: quarkus-user-service
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate

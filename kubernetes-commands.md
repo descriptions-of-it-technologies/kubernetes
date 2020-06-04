@@ -263,6 +263,7 @@
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | ns                                                                                                                 |                                                                         |
 | kubectl describe namespace                                                                                         |                                                                         |
+| kubectl create -f [configFile]                                                                                     |                                                                         |
 | kubectl create namespace [nameNamespace]                                                                           |                                                                         |
 | kubectl create namespace [name] --dry-run=client -o yaml                                                           |                                                                         |
 | kubectl get namespaces                                                                                             |                                                                         |
@@ -271,6 +272,7 @@
 | kubectl -n kube-system get all                                                                                     |                                                                         |
 | kubectl explain ns                                                                                                 |                                                                         |
 | kubectl edit namespace                                                                                             |                                                                         |
+| kubectl delete -f [configFile]                                                                                     |                                                                         |
 | kubectl delete namespace                                                                                           |                                                                         |
 |                                                                                                                    |                                                                         |
 
