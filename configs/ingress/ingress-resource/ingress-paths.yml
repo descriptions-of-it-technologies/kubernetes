@@ -13,7 +13,7 @@ spec:
             backend:
               serviceName: some-service-name
               servicePort: 8080
-          - path: "somePath2"
+          - path: "/somePath2"
             backend:
               serviceName: some-service-name
               servicePort: 8080
