@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: myapp-replicaset
+  namespace: namespace
   labels:
     app: myapp
     tier: back-end
