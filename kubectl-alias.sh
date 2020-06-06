@@ -6,6 +6,7 @@
 alias k="       kubectl"
 
 alias wkg="watch     kubectl get nodes,pods,replicasets,deployments,resourcequotas,limitranges,configmaps,secrets,serviceaccounts,services,daemonsets,jobs,cronjobs,persistentvolumes,persistentvolumeclaims,ingress,statefulsets,quota -o wide"
+alias wkgn="watch    kubectl get nodes,pods,replicasets,deployments,resourcequotas,limitranges,configmaps,secrets,serviceaccounts,services,daemonsets,jobs,cronjobs,persistentvolumes,persistentvolumeclaims,ingress,statefulsets,quota -o wide --namespace"
 alias wkga="watch    kubectl get nodes,pods,replicasets,deployments,namespaces,resourcequotas,limitranges,configmaps,secrets,serviceaccounts,services,daemonsets,jobs,cronjobs,persistentvolumes,persistentvolumeclaims,ingress,statefulsets,quota -o wide"
 alias wkgan="watch   kubectl get nodes,pods,replicasets,deployments,namespaces,resourcequotas,limitranges,configmaps,secrets,serviceaccounts,services,daemonsets,jobs,cronjobs,persistentvolumes,persistentvolumeclaims,ingress,statefulsets,quota -o wide --all-namespaces"
 
@@ -78,6 +79,7 @@ alias kd="      kubectl describe"
 alias kdn="     kubectl describe node"
 
 alias kdp="     kubectl describe pods"
+alias kdpn="     kubectl describe pods --namespace"
 
 alias kdrs="    kubectl describe replicaset"
 
@@ -183,6 +185,7 @@ alias kg='      kubectl get'
 alias kga="     kubectl get all -o wide"
 alias kgan="    kubectl get all -o wide --namespace"
 alias kgaan="   kubectl get all -o wide --all-namespaces"
+alias kgas="    kubectl get all -o wide --selector"
 
 alias kgn="     kubectl get nodes -o wide "
 
