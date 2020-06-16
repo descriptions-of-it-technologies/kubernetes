@@ -110,8 +110,8 @@
 | resourcequotas                   | quota        |                 |                              | true          | ResourceQuota                   |
 | replicasets                      | rs           |                 | apps                         | true          | ReplicaSet                      |
 | runtimeclasses                   |              |                 | node.k8s.io                  | false         | RuntimeClass                    |
-| rolebindings                     |              |                 | rbac.authorization.k8s.io    | true          | RoleBinding                     |
-| roles                            |              |                 | rbac.authorization.k8s.io    | true          | Role                            |
+| rolebindings                     |              | rb              | rbac.authorization.k8s.io    | true          | RoleBinding                     |
+| roles                            |              | r               | rbac.authorization.k8s.io    | true          | Role                            |
 | serviceaccounts                  | sa           |                 |                              | true          | ServiceAccount                  |
 | secrets                          |              | sec             |                              | true          | Secret                          |
 | services                         | svc          |                 |                              | true          | Service                         |

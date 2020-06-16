@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  namespace: namespace
+  labels:
+    app: myapp
+    type: back-end
+spec:
+  containers:
+    - name: mysql-container
+      image: mysql
+  subdomain: headless-service-name
+  hostname: mysql-pod

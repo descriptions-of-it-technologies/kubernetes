@@ -1,4 +1,4 @@
-# Kubernetes Commands.
+# Kubectl Commands.
 
 
 
@@ -68,19 +68,21 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl                                                                                                            |                                                                         |
-| kubectl events                                                                                                     | Show events.                                                            |
+| kubectl create -f .                                                                                                |                                                                         |
+| kubectl create -f [nameFile] --dry-run                                                                             | This will not create the resource, instead, tell you whether the resource can be created and if your command is right. |
+| kubectl describe storageclasses                                                                                    |                                                                         |
 | watch kubectl get all -o wide                                                                                      |                                                                         |
 | kubectl get all --selector [key]=[value],[key]=[value],[key]=[value]                                               |                                                                         |
+| kubectl get clusterrolebindings [roleName]                                                                         |                                                                         |
+| kubectl get deploy [nameDeploy] -o yaml > [toFile]                                                                 | This will output the resource definition in YAML format on the screen.  |
+| kubectl get apiservices                                                                                                                   |                                                                         |
+| kubectl events                                                                                                     | Show events.                                                            |
 | kubectl -n  kube-system get pods                                                                                   |                                                                         |
 | kubectl --namespace kube-system get pods                                                                           |                                                                         |
 | kubectl -n kube-system get pod [namePod] -o yaml > /tmp/myPodConfig.yaml                                           |                                                                         |
-| kubectl describe storageclasses                                                                                    |                                                                         |
 | kubeadm reset                                                                                                      |                                                                         |
 | kubeadm token create --print-join-command                                                                          |                                                                         |
 | kubeadm join [ipAddressAndPort] --token [token] --discovery-token-ca-cert-hash [value]                             |                                                                         |
-| kubectl get clusterrolebindings [roleName]                                                                         |                                                                         |
-| kubectl create -f [nameFile] --dry-run                                                                             | This will not create the resource, instead, tell you whether the resource can be created and if your command is right. |
-| kubectl get deploy [nameDeploy] -o yaml > [toFile]                                                                 | This will output the resource definition in YAML format on the screen.  |
 | -o json                                                                                                            | Output a JSON formatted API object.                                     |
 | -o name                                                                                                            | Print only the resource name and nothing else.                          |
 | -o wide                                                                                                            | Output in the plain-text format with any additional information.        |
@@ -137,7 +139,8 @@
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl describe pod [podName]                                                                                     |                                                                         |
 | kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage] --restart=Never                                   | Create Pod.                                                             |
-| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage] --restart=Never --dry-run -o yaml                 | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
+| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]  --dry-run -o yaml                                | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
+| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]  --dry-run -o yaml > [nameConf].yaml              | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
 | kubectl logs [podName]                                                                                             | Show log of pod.                                                        |
 | kubectl get pods                                                                                                   |                                                                         |
 | kubectl get pods --namespaces=[namespace]                                                                          |                                                                         |
@@ -219,7 +222,7 @@
 | kubectl apply -f [configFile]                                                                                      | Update deployment by config file.                                       |
 | kubectl edit deployment [deploymentName]                                                                           |                                                                         |
 | kubectl edit deployment [deploymentName] --record                                                                  |                                                                         |
-| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage]                                        | Update image of deployment by kubectl command. But not be updated image in config file.                                   |
+| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage]                                        | Update image of deployment by kubectl command. But not be updated image in config file. |
 | kubectl set image deployment [deploymentName] [imageName]=[newVersionImage] --record                               |                                                                         |
 | kubectl describe deployment [deploymentName]                                                                       |                                                                         |
 | kubectl describe deployment [deploymentName] --revision=[numberRevision]                                           |                                                                         |
@@ -244,14 +247,13 @@
 | kubectl port-forward deployment/[deploymentName] [localMachinePort]:[containerPort]                                |                                                                         |
 | kubectl expose deployment [nameDeployment] --type NodePort --port [numberOfPort]                                   |                                                                         |
 | kubectl expose deployment [nameDep] --target-port=[port] --port [port] --type=LoadBalancer --namespace=[namespace] |                                                                         |
+| kubectl expose deployment [nameDeployment] -n [namespace] --type=NodePort --port=[port] --target-port=[port] --name=[name] --dry-run -o yaml > [nameFile.yaml].yaml     |                    |
+| kubectl expose deployment [nameDeployment] -n [namespace] --type=NodePort --port=[port] --target-port=[port] --name=[name]     |                                                             |
 | kubectl delete deployment                                                                                          |                                                                         |
 | kubectl delete deploy [nameDeployment]                                                                             | Delete deployment by name.                                              |
 | kubectl delete -f [configFile]                                                                                     | Delete deployment by config file.                                       |
 | kubectl rollout status deployment                                                                                  |                                                                         |
 |                                                                                                                    |                                                                         |
-
-`kubectl create deployment does not have a --replicas option. You could first create it and then scale it using the kubectl scale command.`
-`--generator=deployment/v1beta1 is deprecated as of Kubernetes 1.16. The recommended way is to use the kubectl create option instead.`
 
 
 
@@ -640,10 +642,13 @@
 
 ## kubectl exec
 
-| Key/Command                                | Description                                                             |
-| ------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl exec -ti                           |                                                                         |
-|                                            |                                                                         |
+| Key/Command                                                                 | Description                                                             |
+| --------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| kubectl exec -ti                                                            |                                                                         |
+| kubectl exec [namePod] whoami                                               |                                                                         |
+| kubectl exec -it [namePod] -- date -s '19 APR 2012 11:14:00'                |                                                                         |
+| kubectl exec -it [namePod] -- sh                                            |                                                                         |
+|                                                                             |                                                                         |
 
 
 

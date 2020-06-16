@@ -85,11 +85,20 @@ But if you really want to, you have 2 options:
 
 
 ## Deployment.
+* Update strategies: Recreate, RollingUpdate. Default deployment update strategy is RollingUpdate.
 * Edit Deployments. With Deployments you can easily edit any field/property of the POD template. Since the pod template 
   is a child of the deployment specification,  with every change the deployment will automatically delete and create a 
   new pod with the new changes. So if you are asked to edit a property of a POD part of a deployment you may do that 
   simply by running the command `kubectl edit deployment my-deployment`.
-* IMPORTANT. `kubectl create deployment` does not have a `--replicas` option. You could first create it and then scale it using the `kubectl scale` command.
+* IMPORTANT. `kubectl create deployment` does not have a `--replicas` option. You could first create it and then scale 
+  it using the `kubectl scale` command.
+* `--generator=deployment/v1beta1` is deprecated as of Kubernetes 1.16. The recommended way is to use the `kubectl create` option instead.`
+
+
+
+
+
+## StatefulSet.
 
 
 
@@ -108,6 +117,7 @@ But if you really want to, you have 2 options:
 
 
 ## Service.
+* Service Types: NodePrt, ClusterIp, LoadBalancer. LoadBalancer service type only work on cloud platforms such as Google Cloud or AWS.
 * NodePort can only be in a valid range which by default is from 30000 to 32767.
 
 
@@ -119,6 +129,13 @@ But if you really want to, you have 2 options:
 * Ingress Controller (not deployed by default).
 * Ingress Resources.
 * Ingress Controllers: GCP HTTP(S) Load Balancer(GCE), Nginx, Contour, Haproxy, trafik, Istio.
+
+
+
+
+## Network Policies.
+* Two types of traffic ingress and egress.
+
 
 
 
@@ -257,13 +274,28 @@ But if you really want to, you have 2 options:
 
 
 
-## Persistent Volume.
+## Volumes.
 
+
+
+
+
+## Persistent Volume.
+* Types of access mode: ReadOnlyMany, ReadWriteOnce, ReadWriteMany.
+* The Access Modes set on the PV and the PVC should be a match.
+* Dynamic provisioning of volumes.
 
 
 
 
 ## Persistent Volume Claim.
+* The Access Modes set on the PV and the PVC should be a match.
+
+
+
+
+
+## Storage Class.
 
 
 

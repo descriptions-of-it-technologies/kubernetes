@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploymentName
+  namespace: namespace
+  labels:
+    name: label-name
+    type: label-type
+    app: label-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: label-name
+        type: label-type
+        app: label-app
+    spec:
+      containers:
+        - name: name-container
+          image: nginx
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: /var/lib/postgres-db-env-dev/data
+              name: nameVolume
+      volumes:
+        - name: nameVolume
+          persistentVolumeClaim:
+            claimName: namePersistentVolumeClime
+  selector:
+    matchLabels:
+      name: postgres-db
+      type: back-end
+      app: user-service

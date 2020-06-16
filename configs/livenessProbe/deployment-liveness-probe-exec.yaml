@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploymentName
+  namespace: namespace
+  labels:
+    name: label-name
+    type: label-type
+    app: label-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: label-name
+        type: label-type
+        app: label-app
+    spec:
+      containers:
+        - name: name-container
+          image: postgres
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          livenessProbe:
+            exec:
+              command: ["psql", "-w", "-U", "developer", "-d", "user-service-db", "-c", "SELECT 1"]
+            initialDelaySeconds: 45
+            timeoutSeconds: 2
+  selector:
+    matchLabels:
+      name: postgres-db
+      type: back-end
+      app: user-service

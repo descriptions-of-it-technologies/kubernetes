@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploymentName
+  namespace: namespace
+  labels:
+    name: label-name
+    type: label-type
+    app: label-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: label-name
+        type: label-type
+        app: label-app
+    spec:
+      containers:
+        - name: name-container
+          image: nginx
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: nameConfigmap
+  selector:
+    matchLabels:
+      name: postgres-db
+      type: back-end
+      app: user-service

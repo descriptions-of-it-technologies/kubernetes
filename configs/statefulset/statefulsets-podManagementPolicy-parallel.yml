@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: myapp-deployment
+  namespace: namespace
+  labels:
+    app: myapp
+    tier: back-end
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: myapp
+        tier: back-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+          ports:
+            - containerPort: 80
+  serviceName: service-name
+  podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      app: myapp
+      tier: back-end

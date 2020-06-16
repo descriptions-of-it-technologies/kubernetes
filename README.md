@@ -8,22 +8,9 @@
 * [About.](#about)
 * [Documentation.](#documentation)
 * [Kubernetes Main Concepts.](#kubernetes-main-concepts)
-* [Node.](#node)
-* [Pod.](#pod)
-* [ReplicaSet.](#replicaset)
-* [Deployment.](#deployment)
-* [Namespace.](#namespace)
-* [Configmap.](#configmap)
-* [Security Contexts.](#security-contexts)
-* [Secret.](#secret)
-* [Service Account.](#service-account)
-* [Resources](#resources)
-* [Node Selector.](#node-selector)
-* [Taints and Tolerations.](#taints-and-tolerations)
-* [Node Affinity.](#node-affinity)
 * [kubectl tools.](#kubectl-tools)
 * [Kubernetes Features.](#kubernetes-features)
-* [Kubernetes Commands.](kubernetes-commands.md)
+* [Kubernetes Commands.](kubectl-commands.md)
 * [What Problems Does Kubernetes Aim to Solve?](#what-problems-does-kubernetes-aim-to-solve)
 * [What problems can Kubernetes not solve?](#what-problems-can-kubernetes-not-solve)
 * [Manifest File.](#manifest-file)
@@ -88,17 +75,18 @@
 * [Cluster.]()
 * [Nodes.]()
 * [Master Node.]()
-* [kube-apiserver]()
-* [kube-controller-manager]()
-* [kube-scheduler]()
 * [Worker Node.]()
+* [API Server]()
+* [Controller]()
+* [Scheduler]()
+* [Container Runtime]()
 * [kubelet]()
-* [kube-proxy]()
 * [etcd]()
+* [kube-proxy]()
 
 
 
-  
+
 
 ## kubectl tools.
 * [Krew](https://krew.sigs.k8s.io/)

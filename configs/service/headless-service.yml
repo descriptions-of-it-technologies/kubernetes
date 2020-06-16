@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: some-headless-service
+  namespace: namespace
+  labels:
+    app: some-app
+    type: some-type
+spec:
+  ports:
+    - port: 8080
+  selector:
+    app: some-app-label
+    type: some-type-label
+  clusterIP: None
