@@ -110,12 +110,12 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl describe node                                                                                              |                                                                         |
+| kubectl describe node [nodeName] | grep Taint                                                                      |                                                                         |
 | kubectl get nodes                                                                                                  | Show all servers (nods) K8s Cluster.                                    |
 | kubectl get nodes -o wide                                                                                          |                                                                         |
 | kubectl get node [nameNode] --show-labels                                                                          |                                                                         |
 | kubectl get nodes --show-labels                                                                                    |                                                                         |
-| kubectl get nodes -l [key]=[value]                                                                                 | Get nodes whit this label.v                                             |
-| kubectl get nodes -l [key]=[value]                                                                                 | Get nodes whit this label.v                                             |
+| kubectl get nodes -l [key]=[value]                                                                                 | Get nodes whit this label.                                              |
 | kubectl explain node                                                                                               |                                                                         |
 | kubectl edit node                                                                                                  |                                                                         |
 | kubectl label node [nodeName] [labelKey]=[labelValue]                                                              | Set label node.                                                         |
@@ -138,10 +138,12 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl describe pod [podName]                                                                                     |                                                                         |
+| kubectl describe -f [nameConfig].yaml                                                                                 |                                                                         |
 | kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage] --restart=Never                                   | Create Pod.                                                             |
 | kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]  --dry-run -o yaml                                | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
 | kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]  --dry-run -o yaml > [nameConf].yaml              | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
 | kubectl logs [podName]                                                                                             | Show log of pod.                                                        |
+| kubectl get -f [nameConfig].yaml                                                                                   |                                                                         |
 | kubectl get pods                                                                                                   |                                                                         |
 | kubectl get pods --namespaces=[namespace]                                                                          |                                                                         |
 | kubectl get pods --all-namespaces                                                                                  |                                                                         |
@@ -252,7 +254,6 @@
 | kubectl delete deployment                                                                                          |                                                                         |
 | kubectl delete deploy [nameDeployment]                                                                             | Delete deployment by name.                                              |
 | kubectl delete -f [configFile]                                                                                     | Delete deployment by config file.                                       |
-| kubectl rollout status deployment                                                                                  |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
@@ -303,7 +304,7 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create -f [configFile]                                                                                     |                                                                         |
-| kubectl -n [namespace] describe quota [quotaName]                                                                  |                                                                         |
+| kubectl describe quota [quotaName] -n [namespace]                                                                  |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
@@ -315,7 +316,7 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create -f [configFile]                                                                                     |                                                                         |
-| kubectl -n [namespace] describe limitrange [quotaName]                                                             |                                                                         |
+| kubectl describe limitrange [quotaName] -n [namespace]                                                             |                                                                         |
 |                                                                                                                    |                                                                         |
 
 
@@ -329,6 +330,8 @@
 | kubectl create -f [configFile]                                                                                     |                                                                         |
 | kubectl create configmap [configmapName] --from-literal=[key]=[value] --from-literal=[key]=[value]                 |                                                                         |
 | kubectl create configmap [configmapName] --from-file=[path]                                                        |                                                                         |
+| kubectl create configmap [configmapName] --from-file=<my-key-name>=<path-to-file>                                  |                                                                         |
+| kubectl create configmap [configmapName] --from-env-file=[path]                                                    |                                                                         |
 | kubectl apply -f [configmapName]                                                                                   |                                                                         |
 | kubectl describe configmap [configmapName]                                                                         |                                                                         |
 | kubectl get configmaps                                                                                             |                                                                         |
@@ -368,6 +371,7 @@
 | Key/Command                                                                                                        | Description                                                             |
 | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | kubectl create -f [configFile]                                                                                     |                                                                         |
+| kubectl create serviceaccount [nameServiceAccount]                                                                 |                                                                         |
 | kubectl create serviceaccount [nameServiceAccount] --namespace [namespace]                                         |                                                                         |
 | kubectl get serviceaccount                                                                                         |                                                                         |
 | kubectl get serviceaccount [name]                                                                                  |                                                                         |

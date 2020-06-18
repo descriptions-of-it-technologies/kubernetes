@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  namespace: namespace
+  labels:
+    app: myapp
+    type: back-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      ports:
+        - containerPort: 80
+      readinessProbe:
+        exec:
+          command:
+            - cat
+            - /tmp/is_ready
+        initialDelaySeconds: 5
+        periodSeconds: 5

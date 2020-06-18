@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  nodeName: kind-worker3 # schedule pod to specific node
+  containers:
+    - name: nginx
+      image: nginx
+      imagePullPolicy: IfNotPresent
