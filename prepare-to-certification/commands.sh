@@ -44,6 +44,7 @@ kubectl rollout undo deployment [deploymentName]
 kubectl rollout undo deployment [deploymentName] --to-revision=[revisionNumber]
 
 # ====================================================================================================================== ConfigMap
+kubectl create cm configDB --from-literal=user=admin -o yaml > configDB.yaml
 kubectl create configmap [configmapName] --from-literal=[key]=[value] --from-literal=[key]=[value]
 
 kubectl create configmap [configmapName] --from-file=[path]
@@ -53,9 +54,25 @@ kubectl create configmap [configmapName] --from-env-file=[path]
 
 kubectl create configmap [configmapName] --from-file=[my-key-name]=[path-to-file]
 
+# * You must create a ConfigMap before referencing it in a Pod specification (unless you mark the ConfigMap as "optional").
+#   If you reference a ConfigMap that doesn't exist, the Pod won't start. Likewise, references to keys that don't exist in
+#   the ConfigMap will prevent the pod from starting.
+# * If you use envFrom to define environment variables from ConfigMaps, keys that are considered invalid will be skipped.
+#   The pod will be allowed to start, but the invalid names will be recorded in the event log (InvalidVariableNames).
+#   The log message lists each skipped key.
+# * ConfigMaps reside in a specific Namespace. A ConfigMap can only be referenced by pods residing in the same namespace.
+# * You can't use ConfigMaps for static pods, because the Kubelet does not support this.
+
+
 # ====================================================================================================================== Secret
+kubectl create secret generic secret-db --from-literal=user=admin -o yaml > secret-db.yaml
 kubectl create secret generic [secretName] --from-literal=[key]=[value] --from-literal=[key]=[value]
 kubectl create secret generic [secretName] --from-file=[path] --from-file=[path]
+
+echo -n 'admin' | base64
+echo 'MWYyZDFlMmU2N2Rm' | base64 --decode
+
+# If a field, such as username, is specified in both data and stringData, the value from stringData is used.
 
 # ====================================================================================================================== Namespace
 kubectl create namespace [nameNamespace]
@@ -92,6 +109,13 @@ kubectl create serviceaccount [nameServiceAccount]
 kubectl logs podName
 
 kubectl logs podName -c containerName
+
+# ====================================================================================================================== Events
+
+kubectl get events
+
+# ====================================================================================================================== Explain
+kubectl explain cronjob.spec.jobTemplate --recursive
 
 # ====================================================================================================================== Exec
 

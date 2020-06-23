@@ -78,6 +78,13 @@ But if you really want to, you have 2 options:
 
 
 
+
+## Static Pods.
+
+
+
+
+
 ## ReplicaSet.
 
 
@@ -141,7 +148,14 @@ But if you really want to, you have 2 options:
 
 
 ## ConfigMap.
-
+ * You must create a ConfigMap before referencing it in a Pod specification (unless you mark the ConfigMap as "optional").
+   If you reference a ConfigMap that doesn't exist, the Pod won't start. Likewise, references to keys that don't exist in
+   the ConfigMap will prevent the pod from starting.
+ * If you use envFrom to define environment variables from ConfigMaps, keys that are considered invalid will be skipped.
+   The pod will be allowed to start, but the invalid names will be recorded in the event log (InvalidVariableNames).
+   The log message lists each skipped key.
+ * ConfigMaps reside in a specific Namespace. A ConfigMap can only be referenced by pods residing in the same namespace.
+ * You can't use ConfigMaps for static pods, because the Kubelet does not support this.
 
 
 
@@ -159,6 +173,8 @@ But if you really want to, you have 2 options:
 >> Read about the [protections](https://kubernetes.io/docs/concepts/configuration/secret/#protections) and risks of using secrets [here](https://kubernetes.io/docs/concepts/configuration/secret/#risks)
 
 * Having said that, there are other better ways of handling sensitive data like passwords in Kubernetes, such as using tools like Helm Secrets, HashiCorp Vault.
+
+* If a field, such as username, is specified in both data and stringData, the value from stringData is used.
 
 
 
