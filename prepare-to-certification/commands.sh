@@ -10,8 +10,12 @@ kubectl describe node nodeName | grep Taint
 # Create yaml file of pod configuration.
 kubectl run nginx --image=nginx --dry-run=client -o yaml > pod.yaml
 
+# Create yaml file of pod configuration.
+kubectl run nginx --generator=run-pod/v1 --image=nginx --dry-run=client -o yaml > pod.yaml
+
 # Create yaml file of pod configuration with command sleep.
-kubectl run nginx --image=nginx --dry-run=client -o yaml --command -- sleep 300 >pod.yaml
+kubectl run nginx --image=nginx --dry-run=client -o yaml --command -- sleep 300 > pod.yaml
+
 
 kubectl label pod [podName] [key]=[value]
 kubectl label pod [podName] [key]=[value] --overwrite
@@ -42,6 +46,14 @@ kubectl rollout history deployment [deploymentName]
 kubectl rollout history deployment [deploymentName] --revision=[numberRevision]
 kubectl rollout undo deployment [deploymentName]
 kubectl rollout undo deployment [deploymentName] --to-revision=[revisionNumber]
+
+# ====================================================================================================================== Service
+kubectl create service clusterip redis --tcp=6379:6379 --dry-run -o yaml
+kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run -o yaml
+
+# ====================================================================================================================== PersistentVolume
+
+# ====================================================================================================================== PersistentVolumeClaim
 
 # ====================================================================================================================== ConfigMap
 kubectl create cm configDB --from-literal=user=admin -o yaml > configDB.yaml
@@ -86,10 +98,6 @@ kubectl config use-context [contextName]
 kubectl config delete-context
 
 # ====================================================================================================================== Job
-
-# ====================================================================================================================== Service
-kubectl create service clusterip redis --tcp=6379:6379 --dry-run -o yaml
-kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run -o yaml
 
 # ====================================================================================================================== CronJob
 

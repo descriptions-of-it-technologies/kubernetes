@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  namespace: namespace
+  labels:
+    app: myapp
+    tier: back-end
+spec:
+  containers:
+    - name: myapp-container
+      image: alpine
+      imagePullPolicy: IfNotPresent
+      command: ["/bin/sh","-c", "while true; do date; sleep $TIME_FREQ; done > /opt/time/time-check.log"]
+  restartPolicy: Always
