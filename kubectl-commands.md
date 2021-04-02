@@ -723,4 +723,14 @@
 
 
 
+## Sort this commands.
+| Key/Command                                                                           | Description                                                             |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| kubectl get deployments/ingress-nginx-controller -o yaml -n kube-system               |                                                                         |
+|                                                                                       |                                                                         |
+
+
+
+
+
 ## Help.
