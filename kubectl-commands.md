@@ -615,7 +615,7 @@
 | kubectl get rs                             |                                                                         |
 | kubectl get componentstatuses              | Show status of K8s Cluster.                                             |
 | kubectl get sc                             |                                                                         |
-|                                            |                                                                         |
+| kubectl get nodes                          | Show all the k8s cluster                                                |
 
 
 
