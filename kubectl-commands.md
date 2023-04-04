@@ -65,30 +65,31 @@
 
 ## General. 
 
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl                                                                                                            |                                                                         |
-| kubectl create -f .                                                                                                |                                                                         |
-| kubectl create -f [nameFile] --dry-run                                                                             | This will not create the resource, instead, tell you whether the resource can be created and if your command is right. |
-| kubectl describe storageclasses                                                                                    |                                                                         |
-| watch kubectl get all -o wide                                                                                      |                                                                         |
-| kubectl get all --selector [key]=[value],[key]=[value],[key]=[value]                                               |                                                                         |
-| kubectl get clusterrolebindings [roleName]                                                                         |                                                                         |
-| kubectl get deploy [nameDeploy] -o yaml > [toFile]                                                                 | This will output the resource definition in YAML format on the screen.  |
-| kubectl get apiservices                                                                                                                   |                                                                         |
-| kubectl events                                                                                                     | Show events.                                                            |
-| kubectl -n  kube-system get pods                                                                                   |                                                                         |
-| kubectl --namespace kube-system get pods                                                                           |                                                                         |
-| kubectl -n kube-system get pod [namePod] -o yaml > /tmp/myPodConfig.yaml                                           |                                                                         |
-| kubeadm reset                                                                                                      |                                                                         |
-| kubeadm token create --print-join-command                                                                          |                                                                         |
-| kubeadm join [ipAddressAndPort] --token [token] --discovery-token-ca-cert-hash [value]                             |                                                                         |
-| -o json                                                                                                            | Output a JSON formatted API object.                                     |
-| -o name                                                                                                            | Print only the resource name and nothing else.                          |
-| -o wide                                                                                                            | Output in the plain-text format with any additional information.        |
-| -o yaml                                                                                                            | Output a YAML formatted API object.                                     |
-| kubectl api-resources                                                                                              |                                                                         |
-|                                                                                                                    |                                                                         |
+| Key/Command                                                                            | Description                                                                                                            |
+|----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| kubectl                                                                                |                                                                                                                        |
+| kubectl create -f .                                                                    |                                                                                                                        |
+| kubectl create -f [nameFile] --dry-run                                                 | This will not create the resource, instead, tell you whether the resource can be created and if your command is right. |
+| kubectl describe storageclasses                                                        |                                                                                                                        |
+| watch kubectl get all -o wide                                                          |                                                                                                                        |
+| kubectl get all --selector [key]=[value],[key]=[value],[key]=[value]                   |                                                                                                                        |
+| kubectl get clusterrolebindings [roleName]                                             |                                                                                                                        |
+| kubectl get deploy [nameDeploy] -o yaml > [toFile]                                     | This will output the resource definition in YAML format on the screen.                                                 |
+| kubectl get apiservices                                                                |                                                                                                                        |
+| kubectl events                                                                         | Show events.                                                                                                           |
+| kubectl -n  kube-system get pods                                                       |                                                                                                                        |
+| kubectl --namespace kube-system get pods                                               |                                                                                                                        |
+| kubectl -n kube-system get pod [namePod] -o yaml > /tmp/myPodConfig.yaml               |                                                                                                                        |
+| kubeadm reset                                                                          |                                                                                                                        |
+| kubeadm token create --print-join-command                                              |                                                                                                                        |
+| kubeadm join [ipAddressAndPort] --token [token] --discovery-token-ca-cert-hash [value] |                                                                                                                        |
+| -o json                                                                                | Output a JSON formatted API object.                                                                                    |
+| -o name                                                                                | Print only the resource name and nothing else.                                                                         |
+| -o wide                                                                                | Output in the plain-text format with any additional information.                                                       |
+| -o yaml                                                                                | Output a YAML formatted API object.                                                                                    |
+| kubectl api-resources                                                                  |                                                                                                                        |
+| kubectl cluster-info                                                                   |                                                                                                                        |
+|                                                                                        |                                                                                                                        |
 
 
 
@@ -96,10 +97,10 @@
 
 ## Cluster. 
 
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl cluster-info                                                                                               | Show information about K8s Cluster.                                     |
-|                                                                                                                    |                                                                         |
+| Key/Command          | Description                         |
+|----------------------|-------------------------------------|
+| kubectl cluster-info | Show information about K8s Cluster. |
+|                      |                                     |
 
 
 
@@ -107,25 +108,25 @@
 
 ## Node.
 
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl describe node                                                                                              |                                                                         |
-| kubectl describe node [nodeName] | grep Taint                                                                      |                                                                         |
-| kubectl get nodes                                                                                                  | Show all servers (nods) K8s Cluster.                                    |
-| kubectl get nodes -o wide                                                                                          |                                                                         |
-| kubectl get node [nameNode] --show-labels                                                                          |                                                                         |
-| kubectl get nodes --show-labels                                                                                    |                                                                         |
-| kubectl get nodes -l [key]=[value]                                                                                 | Get nodes whit this label.                                              |
-| kubectl explain node                                                                                               |                                                                         |
-| kubectl edit node                                                                                                  |                                                                         |
-| kubectl label node [nodeName] [labelKey]=[labelValue]                                                              | Set label node.                                                         |
-| kubectl label node [nameNode] [labelKey]-                                                                          | Remove label node.                                                      |
-| kubectl delete node [nameNode]                                                                                     |                                                                         |
-| kubectl drain [nameNode] --ignore-daemonsets                                                                       |                                                                         |
-| kubectl taint node [nodeName] [key]=[value]:[taint-effect]                                                         |                                                                         |
-| kubectl taint node [nameNode] [key]/[value]:[taint-effect]-                                                        | Remove the taint on node.                                               |
-| kubectl taint node [nameNode] node-role.kubernetes.io/master:NoSchedule                                            | Remove the taint on master.                                             |
-|                                                                                                                    |                                                                         |
+| Key/Command                                                             | Description                          |
+|-------------------------------------------------------------------------|--------------------------------------|
+| kubectl describe node                                                   |                                      |
+| kubectl describe node [nodeName]                                        | grep Taint                           |                                                                         |
+| kubectl get nodes                                                       | Show all servers (nods) K8s Cluster. |
+| kubectl get nodes -o wide                                               |                                      |
+| kubectl get node [nameNode] --show-labels                               |                                      |
+| kubectl get nodes --show-labels                                         |                                      |
+| kubectl get nodes -l [key]=[value]                                      | Get nodes whit this label.           |
+| kubectl explain node                                                    |                                      |
+| kubectl edit node                                                       |                                      |
+| kubectl label node [nodeName] [labelKey]=[labelValue]                   | Set label node.                      |
+| kubectl label node [nameNode] [labelKey]-                               | Remove label node.                   |
+| kubectl delete node [nameNode]                                          |                                      |
+| kubectl drain [nameNode] --ignore-daemonsets                            |                                      |
+| kubectl taint node [nodeName] [key]=[value]:[taint-effect]              |                                      |
+| kubectl taint node [nameNode] [key]/[value]:[taint-effect]-             | Remove the taint on node.            |
+| kubectl taint node [nameNode] node-role.kubernetes.io/master:NoSchedule | Remove the taint on master.          |
+|                                                                         |                                      |
 
 `kubectl describe node kubemaster | grep Taint`
 
@@ -135,50 +136,50 @@
 
 ## Pod.
 
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl describe pod [podName]                                                                                     |                                                                         |
-| kubectl describe -f [nameConfig].yaml                                                                                 |                                                                         |
-| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage] --restart=Never                                   | Create Pod.                                                             |
-| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]  --dry-run -o yaml                                | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
-| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]  --dry-run -o yaml > [nameConf].yaml              | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)   |
-| kubectl logs [podName]                                                                                             | Show log of pod.                                                        |
-| kubectl get -f [nameConfig].yaml                                                                                   |                                                                         |
-| kubectl get pods                                                                                                   |                                                                         |
-| kubectl get pods --namespaces=[namespace]                                                                          |                                                                         |
-| kubectl get pods --all-namespaces                                                                                  |                                                                         |
-| kubectl get pods --selector [key]=[value]                                                                          |                                                                         |
-| kubectl get pod -l [keyLabel]                                                                                      | Get pods by label name.                                                 |
-| kubectl get pods -l '![keyValue]'                                                                                  | To list all pods those that don’t have the 'keyValue' label.            |
-| kubectl get pod -L [keyLabel],[keyLabel]                                                                           |                                                                         |
-| kubectl get pods --show-labels                                                                                     |                                                                         |
-| kubectl get pod [namePod] --show-labels                                                                            |                                                                         |
-| kubectl get pod [namePod] -o yaml                                                                                  |                                                                         |
-| kubectl get pod [namePod] -o yaml > [nameFile].yaml                                                                |                                                                         |
-| kubectl get pod [namePod] -o json                                                                                  |                                                                         |
-| kubectl explain pods                                                                                               |                                                                         |
-| kubectl edit pods                                                                                                  |                                                                         |
-| kubectl edit pods [namePod]                                                                                        |                                                                         |
-| kubectl exec [namePod] -- [command]                                                                                | Execute command in pod.                                                 |
-| kubectl exec [namePod] -- ls                                                                                       |                                                                         |
-| kubectl exec [namePod] -- sh                                                                                       |                                                                         |
-| kubectl exec -it [namePod] -- [command]                                                                            | Execute interactive command in pod.                                     |
-| kubectl exec -it [namePod] -c [containerName] -- [command]                                                         |                                                                         |
-| kubectl exec [namePod] whoami                                                                                      |                                                                         |
-| kubectl exec -it [namePod] -- date -s '19 APR 2012 11:14:00'                                                       |                                                                         |
-| kubectl exec -it [namePod] cat /log/app.log                                                                        |                                                                         |
-| kubectl expose pod [namePod] --port=[numberOfPort] --name [nameService] --dry-run -o yaml                          | Create a Service of type ClusterIP to expose pod on port.               |
-| kubectl label pod [podName] [key]=[value]                                                                          | Attach label.                                                           |
-| kubectl label pod [podName] [key]=[value] --overwrite                                                              |                                                                         |
-| kubectl label pod [podName] [key]-                                                                                 | Delete label.                                                           |
-| kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                              |                                                                         | 
-| kubectl port-forward [podName] [localMachinePort]:[podPort]                                                        |                                                                         | 
-| kubectl logs [namePod]                                                                                             |                                                                         |
-| kubectl logs [namePod] -c [containerName]                                                                          |                                                                         |
-| kubectl delete pod [podName]                                                                                       |                                                                         |
-| kubectl delete pods --all                                                                                          |                                                                         |
-| kubectl delete -f [configFile]                                                                                     |                                                                         |
-|                                                                                                                    |                                                                         |
+| Key/Command                                                                                           | Description                                                           |
+|-------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
+| kubectl describe pod [podName]                                                                        |                                                                       |
+| kubectl describe -f [nameConfig].yaml                                                                 |                                                                       |
+| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage] --restart=Never                      | Create Pod.                                                           |
+| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]  --dry-run -o yaml                   | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run) |
+| kubectl run --generator=run-pod/v1 [namePod] --image=[nameImage]  --dry-run -o yaml > [nameConf].yaml | Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run) |
+| kubectl logs [podName]                                                                                | Show log of pod.                                                      |
+| kubectl get -f [nameConfig].yaml                                                                      |                                                                       |
+| kubectl get pods                                                                                      |                                                                       |
+| kubectl get pods --namespaces=[namespace]                                                             |                                                                       |
+| kubectl get pods --all-namespaces                                                                     |                                                                       |
+| kubectl get pods --selector [key]=[value]                                                             |                                                                       |
+| kubectl get pod -l [keyLabel]                                                                         | Get pods by label name.                                               |
+| kubectl get pods -l '![keyValue]'                                                                     | To list all pods those that don’t have the 'keyValue' label.          |
+| kubectl get pod -L [keyLabel],[keyLabel]                                                              |                                                                       |
+| kubectl get pods --show-labels                                                                        |                                                                       |
+| kubectl get pod [namePod] --show-labels                                                               |                                                                       |
+| kubectl get pod [namePod] -o yaml                                                                     |                                                                       |
+| kubectl get pod [namePod] -o yaml > [nameFile].yaml                                                   |                                                                       |
+| kubectl get pod [namePod] -o json                                                                     |                                                                       |
+| kubectl explain pods                                                                                  |                                                                       |
+| kubectl edit pods                                                                                     |                                                                       |
+| kubectl edit pods [namePod]                                                                           |                                                                       |
+| kubectl exec [namePod] -- [command]                                                                   | Execute command in pod.                                               |
+| kubectl exec [namePod] -- ls                                                                          |                                                                       |
+| kubectl exec [namePod] -- sh                                                                          |                                                                       |
+| kubectl exec -it [namePod] -- [command]                                                               | Execute interactive command in pod.                                   |
+| kubectl exec -it [namePod] -c [containerName] -- [command]                                            |                                                                       |
+| kubectl exec [namePod] whoami                                                                         |                                                                       |
+| kubectl exec -it [namePod] -- date -s '19 APR 2012 11:14:00'                                          |                                                                       |
+| kubectl exec -it [namePod] cat /log/app.log                                                           |                                                                       |
+| kubectl expose pod [namePod] --port=[numberOfPort] --name [nameService] --dry-run -o yaml             | Create a Service of type ClusterIP to expose pod on port.             |
+| kubectl label pod [podName] [key]=[value]                                                             | Attach label.                                                         |
+| kubectl label pod [podName] [key]=[value] --overwrite                                                 |                                                                       |
+| kubectl label pod [podName] [key]-                                                                    | Delete label.                                                         |
+| kubectl port-forward pod/[podName] [localMachinePort]:[containerPort]                                 |                                                                       | 
+| kubectl port-forward [podName] [localMachinePort]:[podPort]                                           |                                                                       | 
+| kubectl logs [namePod]                                                                                |                                                                       |
+| kubectl logs [namePod] -c [containerName]                                                             |                                                                       |
+| kubectl delete pod [podName]                                                                          |                                                                       |
+| kubectl delete pods --all                                                                             |                                                                       |
+| kubectl delete -f [configFile]                                                                        |                                                                       |
+|                                                                                                       |                                                                       |
  
  
  
@@ -186,25 +187,25 @@
  
 ## ReplicaSet.
 
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| rs                                                                                                                 |                                                                         | 
-| kubectl create -f [configFile]                                                                                     |                                                                         |
-| kubectl replace -f [configFile]                                                                                    |                                                                         |
-| kubectl scale  --replicas=[numberOfReplicas] -f [configFile]                                                       |                                                                         |
-| kubectl scale  --replicas=[numberOfReplicas] replicaset [nameReplicaSet]                                           |                                                                         |
-| kubectl get replicaset                                                                                             |                                                                         |
-| kubectl get replicaset [nameReplicaSet]                                                                            |                                                                         |
-| kubectl get replicaset [nameReplicaSet] -o yaml                                                                    |                                                                         |
-| kubectl get replicaset [nameReplicaSet] -o json                                                                    |                                                                         |
-| kubectl get rs --all-namespaces                                                                                    |                                                                         |
-| kubectl edit rs [nameReplicaSet]                                                                                   |                                                                         |
-| kubectl describe replicasets [nameReplicaSet]                                                                      |                                                                         |
-| kubectl describe rs [nameReplicaSet]                                                                               |                                                                         |
-| kubectl explain replicasets                                                                                        |                                                                         |
-| kubectl delete replicasets [nameReplicaSet]                                                                        |                                                                         |
-| kubectl delete -f [configFile]                                                                                     |                                                                         |
-|                                                                                                                    |                                                                         | 
+| Key/Command                                                              | Description |
+|--------------------------------------------------------------------------|-------------|
+| rs                                                                       |             | 
+| kubectl create -f [configFile]                                           |             |
+| kubectl replace -f [configFile]                                          |             |
+| kubectl scale  --replicas=[numberOfReplicas] -f [configFile]             |             |
+| kubectl scale  --replicas=[numberOfReplicas] replicaset [nameReplicaSet] |             |
+| kubectl get replicaset                                                   |             |
+| kubectl get replicaset [nameReplicaSet]                                  |             |
+| kubectl get replicaset [nameReplicaSet] -o yaml                          |             |
+| kubectl get replicaset [nameReplicaSet] -o json                          |             |
+| kubectl get rs --all-namespaces                                          |             |
+| kubectl edit rs [nameReplicaSet]                                         |             |
+| kubectl describe replicasets [nameReplicaSet]                            |             |
+| kubectl describe rs [nameReplicaSet]                                     |             |
+| kubectl explain replicasets                                              |             |
+| kubectl delete replicasets [nameReplicaSet]                              |             |
+| kubectl delete -f [configFile]                                           |             |
+|                                                                          |             | 
 
 
 
@@ -212,49 +213,49 @@
 
 ## Deployment. 
 
-| Key/Command                                                                                                        | Description                                                             |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| kubectl create deployment [deploymentName] --image=[imageName:version]                                             |                                                                         |
-| kubectl create -f [configFile]                                                                                     | Create deployment by config file.                                       |
-| kubectl create -f [configFile] --record                                                                            |                                                                         |
-| kubectl create deployment --image=[nameImage] [nameDeployment]                                                     | Create a deployment.                                                    |
-| kubectl create -f [configFile] --namespace=[name]                                                                  |                                                                         |
-| kubectl create deployment --image=[nameImage] [nameDeployment] --dry-run -o yaml                                   | Generate Deployment YAML file (-o yaml). Don't create it(--dry-run)     |
-| kubectl create deployment --image=[nameImage] [nameDeployment] --dry-run -o yaml > [fileName].yaml                 | Save it to a file - (If you need to modify or add some other details)   |
-| kubectl apply -f [configFile]                                                                                      | Update deployment by config file.                                       |
-| kubectl edit deployment [deploymentName]                                                                           |                                                                         |
-| kubectl edit deployment [deploymentName] --record                                                                  |                                                                         |
-| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage]                                        | Update image of deployment by kubectl command. But not be updated image in config file. |
-| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage] --record                               |                                                                         |
-| kubectl describe deployment [deploymentName]                                                                       |                                                                         |
-| kubectl describe deployment [deploymentName] --revision=[numberRevision]                                           |                                                                         |
-| kubectl rollout pause deployment [deploymentName]                                                                  | Pause updating deployment.                                              |
-| kubectl rollout resume deployment [deploymentName]                                                                 | Resume updating deployment.                                             |
-| kubectl rollout status deployment [deploymentName]                                                                 |                                                                         |
-| kubectl rollout history deployment [deploymentName]                                                                |                                                                         |
-| kubectl rollout history deployment [deploymentName] --revision=[numberRevision]                                    |                                                                         |
-| kubectl rollout undo deployment [deploymentName]                                                                   | Rollout to previous version.                                            |
-| kubectl rollout undo deployment [deploymentName] --to-revision=[revisionNumber]                                    | Rollout to specific number of revision.                                 |
-| kubectl annotate deployment [deploymentName] kubernetes.io/change-cause="Update message..."                        |                                                                         |
-| kubectl describe deployment                                                                                        |                                                                         |
-| kubectl get deployment                                                                                             |                                                                         |
-| kubectl get deployment --all-namespaces                                                                            |                                                                         |
-| kubectl get deploy [nameDeploy] -o yaml                                                                            |                                                                         |
-| kubectl get deploy [nameDeploy] -o json                                                                            |                                                                         |
-| kubectl get deploy [nameDeploy] -o yaml > [toFile]                                                                 | Get configuration of deployment. Example to file - /tmp/deployment.yaml |
-| kubectl get deployment --all-namespaces                                                                            |                                                                         |
-| kubectl explain deployment                                                                                         |                                                                         |
-| kubectl scale deployment                                                                                           |                                                                         |
-| kubectl scale deploy [nameDeployment] --replicas [numberOfReplicas]                                                |                                                                         |
-| kubectl port-forward deployment/[deploymentName] [localMachinePort]:[containerPort]                                |                                                                         |
-| kubectl expose deployment [nameDeployment] --type NodePort --port [numberOfPort]                                   |                                                                         |
-| kubectl expose deployment [nameDep] --target-port=[port] --port [port] --type=LoadBalancer --namespace=[namespace] |                                                                         |
-| kubectl expose deployment [nameDeployment] -n [namespace] --type=NodePort --port=[port] --target-port=[port] --name=[name] --dry-run -o yaml > [nameFile.yaml].yaml     |                    |
-| kubectl expose deployment [nameDeployment] -n [namespace] --type=NodePort --port=[port] --target-port=[port] --name=[name]     |                                                             |
-| kubectl delete deployment                                                                                          |                                                                         |
-| kubectl delete deploy [nameDeployment]                                                                             | Delete deployment by name.                                              |
-| kubectl delete -f [configFile]                                                                                     | Delete deployment by config file.                                       |
-|                                                                                                                    |                                                                         |
+| Key/Command                                                                                                                                                         | Description                                                                             |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| kubectl create deployment [deploymentName] --image=[imageName:version]                                                                                              |                                                                                         |
+| kubectl create -f [configFile]                                                                                                                                      | Create deployment by config file.                                                       |
+| kubectl create -f [configFile] --record                                                                                                                             |                                                                                         |
+| kubectl create deployment --image=[nameImage] [nameDeployment]                                                                                                      | Create a deployment.                                                                    |
+| kubectl create -f [configFile] --namespace=[name]                                                                                                                   |                                                                                         |
+| kubectl create deployment --image=[nameImage] [nameDeployment] --dry-run -o yaml                                                                                    | Generate Deployment YAML file (-o yaml). Don't create it(--dry-run)                     |
+| kubectl create deployment --image=[nameImage] [nameDeployment] --dry-run -o yaml > [fileName].yaml                                                                  | Save it to a file - (If you need to modify or add some other details)                   |
+| kubectl apply -f [configFile]                                                                                                                                       | Update deployment by config file.                                                       |
+| kubectl edit deployment [deploymentName]                                                                                                                            |                                                                                         |
+| kubectl edit deployment [deploymentName] --record                                                                                                                   |                                                                                         |
+| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage]                                                                                         | Update image of deployment by kubectl command. But not be updated image in config file. |
+| kubectl set image deployment [deploymentName] [imageName]=[newVersionImage] --record                                                                                |                                                                                         |
+| kubectl describe deployment [deploymentName]                                                                                                                        |                                                                                         |
+| kubectl describe deployment [deploymentName] --revision=[numberRevision]                                                                                            |                                                                                         |
+| kubectl rollout pause deployment [deploymentName]                                                                                                                   | Pause updating deployment.                                                              |
+| kubectl rollout resume deployment [deploymentName]                                                                                                                  | Resume updating deployment.                                                             |
+| kubectl rollout status deployment [deploymentName]                                                                                                                  |                                                                                         |
+| kubectl rollout history deployment [deploymentName]                                                                                                                 |                                                                                         |
+| kubectl rollout history deployment [deploymentName] --revision=[numberRevision]                                                                                     |                                                                                         |
+| kubectl rollout undo deployment [deploymentName]                                                                                                                    | Rollout to previous version.                                                            |
+| kubectl rollout undo deployment [deploymentName] --to-revision=[revisionNumber]                                                                                     | Rollout to specific number of revision.                                                 |
+| kubectl annotate deployment [deploymentName] kubernetes.io/change-cause="Update message..."                                                                         |                                                                                         |
+| kubectl describe deployment                                                                                                                                         |                                                                                         |
+| kubectl get deployment                                                                                                                                              |                                                                                         |
+| kubectl get deployment --all-namespaces                                                                                                                             |                                                                                         |
+| kubectl get deploy [nameDeploy] -o yaml                                                                                                                             |                                                                                         |
+| kubectl get deploy [nameDeploy] -o json                                                                                                                             |                                                                                         |
+| kubectl get deploy [nameDeploy] -o yaml > [toFile]                                                                                                                  | Get configuration of deployment. Example to file - /tmp/deployment.yaml                 |
+| kubectl get deployment --all-namespaces                                                                                                                             |                                                                                         |
+| kubectl explain deployment                                                                                                                                          |                                                                                         |
+| kubectl scale deployment                                                                                                                                            |                                                                                         |
+| kubectl scale deploy [nameDeployment] --replicas [numberOfReplicas]                                                                                                 |                                                                                         |
+| kubectl port-forward deployment/[deploymentName] [localMachinePort]:[containerPort]                                                                                 |                                                                                         |
+| kubectl expose deployment [nameDeployment] --type NodePort --port [numberOfPort]                                                                                    |                                                                                         |
+| kubectl expose deployment [nameDep] --target-port=[port] --port [port] --type=LoadBalancer --namespace=[namespace]                                                  |                                                                                         |
+| kubectl expose deployment [nameDeployment] -n [namespace] --type=NodePort --port=[port] --target-port=[port] --name=[name] --dry-run -o yaml > [nameFile.yaml].yaml |                                                                                         |
+| kubectl expose deployment [nameDeployment] -n [namespace] --type=NodePort --port=[port] --target-port=[port] --name=[name]                                          |                                                                                         |
+| kubectl delete deployment                                                                                                                                           |                                                                                         |
+| kubectl delete deploy [nameDeployment]                                                                                                                              | Delete deployment by name.                                                              |
+| kubectl delete -f [configFile]                                                                                                                                      | Delete deployment by config file.                                                       |
+|                                                                                                                                                                     |                                                                                         |
 
 
 
